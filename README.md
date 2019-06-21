@@ -6,6 +6,8 @@ Create word lists from Password Cards.
 
 If you have a password card (https://www.passwordcard.org/) you can generate a word list to assist in finding lost passwords. 
 
+This application runs on Windows. 
+
 This functionality was requested by members of the Tezos XTZ Recovery Telegram Group
 
 ---
