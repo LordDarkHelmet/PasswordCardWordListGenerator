@@ -14,6 +14,6 @@ This functionality was requested by members of the Tezos XTZ Recovery Telegram G
 
 For Tezos recovery assistance please visit: https://t.me/xtzrecovery 
 
-Donations are welcome: 
-BTC:   33DxcicBuN7wvqByLfmHH9FC9AvuEa3cGh
+Donations are welcome: <br>
+BTC:   33DxcicBuN7wvqByLfmHH9FC9AvuEa3cGh <br>
 Tezos: tz1WYZrE1Lhd5cgh4vzUhJB1UBNGEdekbskQ
