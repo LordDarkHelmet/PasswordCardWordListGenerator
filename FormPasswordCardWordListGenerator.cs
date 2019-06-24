@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; 
 
 namespace PasswordCardWordListGenerator
 {
@@ -474,5 +474,244 @@ namespace PasswordCardWordListGenerator
                 Process.Start(@"https://www.blockchain.com/btc/address/" + linkLabelDonationBTC.Text);
             }
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            PasswordCard pc = new PasswordCard("1");
+            textBoxLine1.Text = new string(pc.myPasswordCardGrid[1]);
+            textBoxLine2.Text = new string(pc.myPasswordCardGrid[2]);
+            textBoxLine3.Text = new string(pc.myPasswordCardGrid[3]);
+            textBoxLine4.Text = new string(pc.myPasswordCardGrid[4]);
+            textBoxLine5.Text = new string(pc.myPasswordCardGrid[5]);
+            textBoxLine6.Text = new string(pc.myPasswordCardGrid[6]);
+            textBoxLine7.Text = new string(pc.myPasswordCardGrid[7]);
+            textBoxLine8.Text = new string(pc.myPasswordCardGrid[8]);
+        }
+
     }
+
+    /// <summary>
+    /// 
+    /// This is derived from https://www.passwordcard.org
+    /// I did not port the whole thing. Only the ability to import. 
+    /// 
+    ///* This file is part of PasswordCard.
+    ///*
+    ///* PasswordCard is free software: you can redistribute it and/or modify
+    ///* it under the terms of the GNU General Public License as published by
+    ///* the Free Software Foundation, either version 3 of the License, or
+    ///* (at your option) any later version.
+    ///*
+    ///* PasswordCard is distributed in the hope that it will be useful,
+    ///* but WITHOUT ANY WARRANTY; without even the implied warranty of
+    ///* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+    ///* GNU General Public License for more details.
+    ///*
+    ///* You should have received a copy of the GNU General Public License
+    ///* along with PasswordCard.If not, see<http://www.gnu.org/licenses/>.
+    ///*
+    ///* Copyright © 2010 pepsoft.org.
+    /// </summary>
+    public class PasswordCard
+    {
+        public PasswordCard(string seed, bool digitArea = false, bool includeSymbols = false, int height = HEIGHT, int width = WIDTH)
+        {
+            GeneratePasswordCardFromSeed(seed, digitArea, includeSymbols, height, width);
+        }
+
+        public PasswordCard(UInt64 seed, bool digitArea = false, bool includeSymbols = false, int height = HEIGHT, int width = WIDTH)
+        {
+            GeneratePasswordCardFromSeed(seed, digitArea, includeSymbols, height, width);
+        }
+
+
+
+        //public char[,] myPasswordCardGrid;
+
+        public const int WIDTH = 29, HEIGHT = 9, BODY_HEIGHT = HEIGHT - 1;
+        public const string HEADER_CHARS = "■□▲△○●★☂☀☁☹☺♠♣♥♦♫€¥£$!?¡¿⊙◐◩�";
+        public const string DIGITS = "0123456789";
+        public const string DIGITS_AND_LETTERS = "23456789abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ";
+        public const string DIGITS_LETTERS_AND_SYMBOLS = "23456789abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ@#$%&*<>?€+{}[]()/\\";
+
+
+        public char[][] myPasswordCardGrid;
+
+        /// <summary>
+        /// The header chars in the top line of the array. 
+        /// </summary>
+        public string MyHeader { get { return new string(myPasswordCardGrid[0]); }  }
+
+
+
+        private bool GeneratePasswordCardFromSeed(string seed, bool digitArea = false, bool includeSymbols = false, int height = HEIGHT, int width = WIDTH)
+        {
+
+            if (seed == null) { throw new ArgumentException("The string cannot be null", "seed"); }
+            seed = seed.Trim();
+            if (seed == "") { throw new ArgumentException("The string cannot be empty", "seed"); }
+            if (seed.Length > 16) { throw new ArgumentException("The string length must be no more than 16 characters", "seed"); }
+
+            string precursor = "";
+            for (int i = seed.Length; i < 16; i++)
+            {
+                precursor += '0';
+            }
+            seed = precursor + seed;
+
+            UInt64 mySeed; 
+
+            try
+            {
+                //return Long.parseLong(paddedStr.substring(0, 8), 16) << 32 | Long.parseLong(paddedStr.substring(8), 16);
+                mySeed = UInt64.Parse(seed, System.Globalization.NumberStyles.HexNumber);
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Could not parse Hex Number String. " + ex.Message, "seed", ex.InnerException);
+            }
+
+            return GeneratePasswordCardFromSeed(mySeed, digitArea, includeSymbols, height, width);
+        }
+
+        private bool GeneratePasswordCardFromSeed(UInt64 seed, bool digitArea = false, bool includeSymbols = false, int height = HEIGHT, int width = WIDTH)
+        {
+
+            //Check for minimums here. 
+            if (height < 2) { throw new ArgumentException("Parameter height must be greater than 2"); }
+            if (width < 2) { throw new ArgumentException("Parameter width must be greater than 2"); }
+                       
+            myPasswordCardGrid = new char[height][];
+            for (int i = 0; i < myPasswordCardGrid.Length; i++)
+            {
+                myPasswordCardGrid[i] = new char[width];
+            }
+
+            Random random = new Random(seed);
+
+            char[]  headerChars = HEADER_CHARS.ToCharArray();
+
+            try
+            {
+
+            shuffle(headerChars, random);
+
+            if (headerChars.Length > width)
+            {
+                //Array.Copy(headerChars, 0, headerChars, 0, width);
+                Array.Resize(ref headerChars, width);
+            }
+
+            myPasswordCardGrid[0] = headerChars;
+
+            if (digitArea)
+            {
+                int halfHeight = 1 + ((height - 1) / 2);
+                for (int y = 1; y < halfHeight; y++)
+                {
+                    for (int x = 0; x < width; x++)
+                    {
+                        if (includeSymbols && ((x % 2) == 0))
+                        {
+                            myPasswordCardGrid[y][x] = DIGITS_LETTERS_AND_SYMBOLS.ToCharArray()[random.NextInt(DIGITS_LETTERS_AND_SYMBOLS.Length)];
+                        }
+                        else
+                        {
+                            myPasswordCardGrid[y][x] = DIGITS_AND_LETTERS.ToCharArray()[random.NextInt(DIGITS_AND_LETTERS.Length)];
+                        }
+                    }
+                }
+                for (int y = halfHeight; y < height; y++)
+                {
+                    for (int x = 0; x < width; x++)
+                    {
+                        myPasswordCardGrid[y][x] = DIGITS.ToCharArray()[random.NextInt(10)];
+                    }
+                }
+            }
+            else
+            {
+                for (int y = 1; y < height; y++)
+                {
+                    for (int x = 0; x < width; x++)
+                    {
+                        if (includeSymbols && ((x % 2) == 0))
+                        {
+                            myPasswordCardGrid[y][x] = DIGITS_LETTERS_AND_SYMBOLS.ToCharArray()[random.NextInt(DIGITS_LETTERS_AND_SYMBOLS.Length)];
+                        }
+                        else
+                        {
+                            myPasswordCardGrid[y][x] = DIGITS_AND_LETTERS.ToCharArray()[random.NextInt(DIGITS_AND_LETTERS.Length)];
+                        }
+                    }
+                }
+            }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return true;
+        }
+
+        private void shuffle(char[] list, Random rnd)
+        {
+            int size = list.Length;
+            for (int i = size; i > 1; i--)
+                swap(list, i - 1, rnd.NextInt(i));
+        }
+
+        private void swap(char[] list, int i, int j)
+        {
+            char tmp = list[i];
+            list[i] = list[j];
+            list[j] = tmp;
+        }
+
+    }
+
+    /// <summary>
+    /// from https://stackoverflow.com/questions/2147524/c-java-number-randomization
+    /// credit to https://stackoverflow.com/users/12048/finnw 
+    /// </summary>
+    [Serializable]
+    public class Random
+    {
+        public Random(UInt64 seed)
+        {
+            this.seed = (seed ^ 0x5DEECE66DUL) & ((1UL << 48) - 1);
+        }
+
+
+
+        public int NextInt(int n)
+        {
+            if (n <= 0) throw new ArgumentException("n must be positive");
+
+            if ((n & -n) == n)  // i.e., n is a power of 2
+                return (int)((n * (long)Next(31)) >> 31);
+
+            long bits, val;
+            do
+            {
+                bits = Next(31);
+                val = bits % (UInt32)n;
+            }
+            while (bits - val + (n - 1) < 0);
+
+            return (int)val;
+        }
+
+        protected UInt32 Next(int bits)
+        {
+            seed = (seed * 0x5DEECE66DL + 0xBL) & ((1L << 48) - 1);
+
+            return (UInt32)(seed >> (48 - bits));
+        }
+
+        private UInt64 seed;
+    }
+
 }

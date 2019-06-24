@@ -63,13 +63,14 @@
             this.linkLabelGitHub = new System.Windows.Forms.LinkLabel();
             this.textBoxAbout = new System.Windows.Forms.TextBox();
             this.groupBoxSettings = new System.Windows.Forms.GroupBox();
-            this.labelNumberOfPasswordsGenerated = new System.Windows.Forms.Label();
             this.checkBoxRightToLeft = new System.Windows.Forms.CheckBox();
             this.checkBoxRightToLeftThenUpAtEdge = new System.Windows.Forms.CheckBox();
             this.checkBoxRightToLeftThenDownAtEdge = new System.Windows.Forms.CheckBox();
             this.checkBoxBottomToTop = new System.Windows.Forms.CheckBox();
             this.checkBoxBottomToTopThenRightAtEdge = new System.Windows.Forms.CheckBox();
             this.checkBoxBottomToTopThenLeftAtEdge = new System.Windows.Forms.CheckBox();
+            this.labelNumberOfPasswordsGenerated = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSample)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaximumPasswordLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinimumPasswordLength)).BeginInit();
@@ -82,7 +83,7 @@
             // 
             this.textBoxLine1.BackColor = System.Drawing.Color.White;
             this.textBoxLine1.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine1.Location = new System.Drawing.Point(667, 65);
+            this.textBoxLine1.Location = new System.Drawing.Point(665, 11);
             this.textBoxLine1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLine1.MaxLength = 29;
             this.textBoxLine1.Name = "textBoxLine1";
@@ -106,7 +107,7 @@
             // 
             this.textBoxLine2.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxLine2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine2.Location = new System.Drawing.Point(667, 105);
+            this.textBoxLine2.Location = new System.Drawing.Point(665, 51);
             this.textBoxLine2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLine2.MaxLength = 29;
             this.textBoxLine2.Name = "textBoxLine2";
@@ -118,7 +119,7 @@
             // 
             this.textBoxLine3.BackColor = System.Drawing.Color.Pink;
             this.textBoxLine3.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine3.Location = new System.Drawing.Point(667, 145);
+            this.textBoxLine3.Location = new System.Drawing.Point(665, 91);
             this.textBoxLine3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLine3.MaxLength = 29;
             this.textBoxLine3.Name = "textBoxLine3";
@@ -130,7 +131,7 @@
             // 
             this.textBoxLine4.BackColor = System.Drawing.Color.LightGreen;
             this.textBoxLine4.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine4.Location = new System.Drawing.Point(667, 185);
+            this.textBoxLine4.Location = new System.Drawing.Point(665, 131);
             this.textBoxLine4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLine4.MaxLength = 29;
             this.textBoxLine4.Name = "textBoxLine4";
@@ -142,7 +143,7 @@
             // 
             this.textBoxLine8.BackColor = System.Drawing.Color.LightCyan;
             this.textBoxLine8.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine8.Location = new System.Drawing.Point(667, 345);
+            this.textBoxLine8.Location = new System.Drawing.Point(665, 291);
             this.textBoxLine8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLine8.MaxLength = 29;
             this.textBoxLine8.Name = "textBoxLine8";
@@ -154,7 +155,7 @@
             // 
             this.textBoxLine7.BackColor = System.Drawing.Color.Plum;
             this.textBoxLine7.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine7.Location = new System.Drawing.Point(667, 305);
+            this.textBoxLine7.Location = new System.Drawing.Point(665, 251);
             this.textBoxLine7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLine7.MaxLength = 29;
             this.textBoxLine7.Name = "textBoxLine7";
@@ -166,7 +167,7 @@
             // 
             this.textBoxLine6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textBoxLine6.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine6.Location = new System.Drawing.Point(667, 265);
+            this.textBoxLine6.Location = new System.Drawing.Point(665, 211);
             this.textBoxLine6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLine6.MaxLength = 29;
             this.textBoxLine6.Name = "textBoxLine6";
@@ -178,7 +179,7 @@
             // 
             this.textBoxLine5.BackColor = System.Drawing.Color.LemonChiffon;
             this.textBoxLine5.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine5.Location = new System.Drawing.Point(667, 225);
+            this.textBoxLine5.Location = new System.Drawing.Point(665, 171);
             this.textBoxLine5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLine5.MaxLength = 29;
             this.textBoxLine5.Name = "textBoxLine5";
@@ -537,18 +538,6 @@
             this.groupBoxSettings.TabStop = false;
             this.groupBoxSettings.Text = "Settings";
             // 
-            // labelNumberOfPasswordsGenerated
-            // 
-            this.labelNumberOfPasswordsGenerated.AutoSize = true;
-            this.labelNumberOfPasswordsGenerated.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumberOfPasswordsGenerated.Location = new System.Drawing.Point(663, 675);
-            this.labelNumberOfPasswordsGenerated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelNumberOfPasswordsGenerated.Name = "labelNumberOfPasswordsGenerated";
-            this.labelNumberOfPasswordsGenerated.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelNumberOfPasswordsGenerated.Size = new System.Drawing.Size(280, 20);
-            this.labelNumberOfPasswordsGenerated.TabIndex = 24;
-            this.labelNumberOfPasswordsGenerated.Text = "Number of Passwords Generated: ...";
-            // 
             // checkBoxRightToLeft
             // 
             this.checkBoxRightToLeft.AutoSize = true;
@@ -627,11 +616,34 @@
             this.checkBoxBottomToTopThenLeftAtEdge.Text = "Bottom to Top Then Left At Edge";
             this.checkBoxBottomToTopThenLeftAtEdge.UseVisualStyleBackColor = true;
             // 
+            // labelNumberOfPasswordsGenerated
+            // 
+            this.labelNumberOfPasswordsGenerated.AutoSize = true;
+            this.labelNumberOfPasswordsGenerated.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumberOfPasswordsGenerated.Location = new System.Drawing.Point(663, 675);
+            this.labelNumberOfPasswordsGenerated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNumberOfPasswordsGenerated.Name = "labelNumberOfPasswordsGenerated";
+            this.labelNumberOfPasswordsGenerated.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelNumberOfPasswordsGenerated.Size = new System.Drawing.Size(280, 20);
+            this.labelNumberOfPasswordsGenerated.TabIndex = 24;
+            this.labelNumberOfPasswordsGenerated.Text = "Number of Passwords Generated: ...";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1178, 355);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // FormPasswordCardWordListGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1265, 727);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelNumberOfPasswordsGenerated);
             this.Controls.Add(this.groupBoxSettings);
             this.Controls.Add(this.groupBoxResources);
@@ -705,6 +717,7 @@
         private System.Windows.Forms.CheckBox checkBoxBottomToTop;
         private System.Windows.Forms.CheckBox checkBoxBottomToTopThenRightAtEdge;
         private System.Windows.Forms.CheckBox checkBoxBottomToTopThenLeftAtEdge;
+        private System.Windows.Forms.Button button1;
     }
 }
 
