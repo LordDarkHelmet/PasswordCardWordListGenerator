@@ -29,15 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPasswordCardWordListGenerator));
-            this.textBoxLine1 = new System.Windows.Forms.TextBox();
             this.pictureBoxSample = new System.Windows.Forms.PictureBox();
-            this.textBoxLine2 = new System.Windows.Forms.TextBox();
-            this.textBoxLine3 = new System.Windows.Forms.TextBox();
-            this.textBoxLine4 = new System.Windows.Forms.TextBox();
-            this.textBoxLine8 = new System.Windows.Forms.TextBox();
-            this.textBoxLine7 = new System.Windows.Forms.TextBox();
-            this.textBoxLine6 = new System.Windows.Forms.TextBox();
-            this.textBoxLine5 = new System.Windows.Forms.TextBox();
             this.buttonGernerateWordList = new System.Windows.Forms.Button();
             this.checkBoxLeftToRight = new System.Windows.Forms.CheckBox();
             this.checkBoxLeftToRightThenUpAtEdge = new System.Windows.Forms.CheckBox();
@@ -70,122 +62,63 @@
             this.checkBoxBottomToTopThenRightAtEdge = new System.Windows.Forms.CheckBox();
             this.checkBoxBottomToTopThenLeftAtEdge = new System.Windows.Forms.CheckBox();
             this.labelNumberOfPasswordsGenerated = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxLine8 = new System.Windows.Forms.TextBox();
+            this.textBoxLine7 = new System.Windows.Forms.TextBox();
+            this.textBoxLine6 = new System.Windows.Forms.TextBox();
+            this.textBoxLine5 = new System.Windows.Forms.TextBox();
+            this.textBoxLine4 = new System.Windows.Forms.TextBox();
+            this.textBoxLine3 = new System.Windows.Forms.TextBox();
+            this.textBoxLine2 = new System.Windows.Forms.TextBox();
+            this.textBoxLine1 = new System.Windows.Forms.TextBox();
+            this.textBoxHeader = new System.Windows.Forms.TextBox();
+            this.panelLine1 = new System.Windows.Forms.Panel();
+            this.labelLine1 = new System.Windows.Forms.Label();
+            this.panelLine2 = new System.Windows.Forms.Panel();
+            this.labelLine2 = new System.Windows.Forms.Label();
+            this.panelLine3 = new System.Windows.Forms.Panel();
+            this.labelLine3 = new System.Windows.Forms.Label();
+            this.panelLine4 = new System.Windows.Forms.Panel();
+            this.labelLine4 = new System.Windows.Forms.Label();
+            this.panelLine5 = new System.Windows.Forms.Panel();
+            this.labelLine5 = new System.Windows.Forms.Label();
+            this.panelLine6 = new System.Windows.Forms.Panel();
+            this.labelLine6 = new System.Windows.Forms.Label();
+            this.panelLine7 = new System.Windows.Forms.Panel();
+            this.labelLine7 = new System.Windows.Forms.Label();
+            this.panelLine8 = new System.Windows.Forms.Panel();
+            this.labelLine8 = new System.Windows.Forms.Label();
+            this.groupBoxPasswordCard = new System.Windows.Forms.GroupBox();
+            this.buttonGeneratePasswordCardFromSeed = new System.Windows.Forms.Button();
+            this.labelSeed = new System.Windows.Forms.Label();
+            this.textBoxSeed = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSample)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaximumPasswordLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinimumPasswordLength)).BeginInit();
             this.groupBoxResources.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTezosXTZRecoveryLogo)).BeginInit();
             this.groupBoxSettings.SuspendLayout();
+            this.panelLine1.SuspendLayout();
+            this.panelLine2.SuspendLayout();
+            this.panelLine3.SuspendLayout();
+            this.panelLine4.SuspendLayout();
+            this.panelLine5.SuspendLayout();
+            this.panelLine6.SuspendLayout();
+            this.panelLine7.SuspendLayout();
+            this.panelLine8.SuspendLayout();
+            this.groupBoxPasswordCard.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBoxLine1
-            // 
-            this.textBoxLine1.BackColor = System.Drawing.Color.White;
-            this.textBoxLine1.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine1.Location = new System.Drawing.Point(665, 11);
-            this.textBoxLine1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxLine1.MaxLength = 29;
-            this.textBoxLine1.Name = "textBoxLine1";
-            this.textBoxLine1.Size = new System.Drawing.Size(588, 41);
-            this.textBoxLine1.TabIndex = 0;
-            this.textBoxLine1.Text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#";
             // 
             // pictureBoxSample
             // 
             this.pictureBoxSample.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSample.Image")));
-            this.pictureBoxSample.Location = new System.Drawing.Point(12, 12);
+            this.pictureBoxSample.Location = new System.Drawing.Point(79, 28);
             this.pictureBoxSample.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxSample.Name = "pictureBoxSample";
-            this.pictureBoxSample.Size = new System.Drawing.Size(625, 382);
+            this.pictureBoxSample.Size = new System.Drawing.Size(436, 366);
             this.pictureBoxSample.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSample.TabIndex = 1;
             this.pictureBoxSample.TabStop = false;
             this.pictureBoxSample.Click += new System.EventHandler(this.PictureBoxSample_Click);
-            // 
-            // textBoxLine2
-            // 
-            this.textBoxLine2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxLine2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine2.Location = new System.Drawing.Point(665, 51);
-            this.textBoxLine2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxLine2.MaxLength = 29;
-            this.textBoxLine2.Name = "textBoxLine2";
-            this.textBoxLine2.Size = new System.Drawing.Size(588, 41);
-            this.textBoxLine2.TabIndex = 2;
-            this.textBoxLine2.Text = "j234567890123456789012345678a";
-            // 
-            // textBoxLine3
-            // 
-            this.textBoxLine3.BackColor = System.Drawing.Color.Pink;
-            this.textBoxLine3.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine3.Location = new System.Drawing.Point(665, 91);
-            this.textBoxLine3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxLine3.MaxLength = 29;
-            this.textBoxLine3.Name = "textBoxLine3";
-            this.textBoxLine3.Size = new System.Drawing.Size(588, 41);
-            this.textBoxLine3.TabIndex = 3;
-            this.textBoxLine3.Text = "k234567890123456789012345678b";
-            // 
-            // textBoxLine4
-            // 
-            this.textBoxLine4.BackColor = System.Drawing.Color.LightGreen;
-            this.textBoxLine4.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine4.Location = new System.Drawing.Point(665, 131);
-            this.textBoxLine4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxLine4.MaxLength = 29;
-            this.textBoxLine4.Name = "textBoxLine4";
-            this.textBoxLine4.Size = new System.Drawing.Size(588, 41);
-            this.textBoxLine4.TabIndex = 4;
-            this.textBoxLine4.Text = "l234567890123456789012345678c";
-            // 
-            // textBoxLine8
-            // 
-            this.textBoxLine8.BackColor = System.Drawing.Color.LightCyan;
-            this.textBoxLine8.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine8.Location = new System.Drawing.Point(665, 291);
-            this.textBoxLine8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxLine8.MaxLength = 29;
-            this.textBoxLine8.Name = "textBoxLine8";
-            this.textBoxLine8.Size = new System.Drawing.Size(588, 41);
-            this.textBoxLine8.TabIndex = 8;
-            this.textBoxLine8.Text = "hijklmnopqrstuvwxyz$%^&*()-+g";
-            // 
-            // textBoxLine7
-            // 
-            this.textBoxLine7.BackColor = System.Drawing.Color.Plum;
-            this.textBoxLine7.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine7.Location = new System.Drawing.Point(665, 251);
-            this.textBoxLine7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxLine7.MaxLength = 29;
-            this.textBoxLine7.Name = "textBoxLine7";
-            this.textBoxLine7.Size = new System.Drawing.Size(588, 41);
-            this.textBoxLine7.TabIndex = 7;
-            this.textBoxLine7.Text = "o234567890123456789012345678f";
-            // 
-            // textBoxLine6
-            // 
-            this.textBoxLine6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.textBoxLine6.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine6.Location = new System.Drawing.Point(665, 211);
-            this.textBoxLine6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxLine6.MaxLength = 29;
-            this.textBoxLine6.Name = "textBoxLine6";
-            this.textBoxLine6.Size = new System.Drawing.Size(588, 41);
-            this.textBoxLine6.TabIndex = 6;
-            this.textBoxLine6.Text = "n234567890123456789012345678e";
-            // 
-            // textBoxLine5
-            // 
-            this.textBoxLine5.BackColor = System.Drawing.Color.LemonChiffon;
-            this.textBoxLine5.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine5.Location = new System.Drawing.Point(665, 171);
-            this.textBoxLine5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxLine5.MaxLength = 29;
-            this.textBoxLine5.Name = "textBoxLine5";
-            this.textBoxLine5.Size = new System.Drawing.Size(588, 41);
-            this.textBoxLine5.TabIndex = 5;
-            this.textBoxLine5.Text = "m234567890123456789012345678d";
             // 
             // buttonGernerateWordList
             // 
@@ -628,35 +561,354 @@
             this.labelNumberOfPasswordsGenerated.TabIndex = 24;
             this.labelNumberOfPasswordsGenerated.Text = "Number of Passwords Generated: ...";
             // 
-            // button1
+            // textBoxLine8
             // 
-            this.button1.Location = new System.Drawing.Point(1178, 355);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.textBoxLine8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.textBoxLine8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLine8.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLine8.Location = new System.Drawing.Point(42, 270);
+            this.textBoxLine8.Margin = new System.Windows.Forms.Padding(0);
+            this.textBoxLine8.MaxLength = 29;
+            this.textBoxLine8.Name = "textBoxLine8";
+            this.textBoxLine8.Size = new System.Drawing.Size(528, 31);
+            this.textBoxLine8.TabIndex = 8;
+            this.textBoxLine8.Text = "hijklmnopqrstuvwxyz$%^&*()-+g";
+            // 
+            // textBoxLine7
+            // 
+            this.textBoxLine7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.textBoxLine7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLine7.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLine7.Location = new System.Drawing.Point(42, 239);
+            this.textBoxLine7.Margin = new System.Windows.Forms.Padding(0);
+            this.textBoxLine7.MaxLength = 29;
+            this.textBoxLine7.Name = "textBoxLine7";
+            this.textBoxLine7.Size = new System.Drawing.Size(528, 31);
+            this.textBoxLine7.TabIndex = 7;
+            this.textBoxLine7.Text = "o234567890123456789012345678f";
+            // 
+            // textBoxLine6
+            // 
+            this.textBoxLine6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.textBoxLine6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLine6.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLine6.Location = new System.Drawing.Point(42, 209);
+            this.textBoxLine6.Margin = new System.Windows.Forms.Padding(0);
+            this.textBoxLine6.MaxLength = 29;
+            this.textBoxLine6.Name = "textBoxLine6";
+            this.textBoxLine6.Size = new System.Drawing.Size(528, 31);
+            this.textBoxLine6.TabIndex = 6;
+            this.textBoxLine6.Text = "n234567890123456789012345678e";
+            // 
+            // textBoxLine5
+            // 
+            this.textBoxLine5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.textBoxLine5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLine5.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLine5.Location = new System.Drawing.Point(42, 177);
+            this.textBoxLine5.Margin = new System.Windows.Forms.Padding(0);
+            this.textBoxLine5.MaxLength = 29;
+            this.textBoxLine5.Name = "textBoxLine5";
+            this.textBoxLine5.Size = new System.Drawing.Size(528, 31);
+            this.textBoxLine5.TabIndex = 5;
+            this.textBoxLine5.Text = "m234567890123456789012345678d";
+            // 
+            // textBoxLine4
+            // 
+            this.textBoxLine4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.textBoxLine4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLine4.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLine4.Location = new System.Drawing.Point(42, 145);
+            this.textBoxLine4.Margin = new System.Windows.Forms.Padding(0);
+            this.textBoxLine4.MaxLength = 29;
+            this.textBoxLine4.Name = "textBoxLine4";
+            this.textBoxLine4.Size = new System.Drawing.Size(528, 31);
+            this.textBoxLine4.TabIndex = 4;
+            this.textBoxLine4.Text = "l234567890123456789012345678c";
+            // 
+            // textBoxLine3
+            // 
+            this.textBoxLine3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.textBoxLine3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLine3.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLine3.Location = new System.Drawing.Point(42, 114);
+            this.textBoxLine3.Margin = new System.Windows.Forms.Padding(0);
+            this.textBoxLine3.MaxLength = 29;
+            this.textBoxLine3.Name = "textBoxLine3";
+            this.textBoxLine3.Size = new System.Drawing.Size(528, 31);
+            this.textBoxLine3.TabIndex = 3;
+            this.textBoxLine3.Text = "k234567890123456789012345678b";
+            // 
+            // textBoxLine2
+            // 
+            this.textBoxLine2.BackColor = System.Drawing.Color.Silver;
+            this.textBoxLine2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLine2.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLine2.Location = new System.Drawing.Point(42, 83);
+            this.textBoxLine2.Margin = new System.Windows.Forms.Padding(0);
+            this.textBoxLine2.MaxLength = 29;
+            this.textBoxLine2.Name = "textBoxLine2";
+            this.textBoxLine2.Size = new System.Drawing.Size(528, 31);
+            this.textBoxLine2.TabIndex = 2;
+            this.textBoxLine2.Text = "j234567890123456789012345678a";
+            // 
+            // textBoxLine1
+            // 
+            this.textBoxLine1.BackColor = System.Drawing.Color.White;
+            this.textBoxLine1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLine1.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLine1.Location = new System.Drawing.Point(42, 52);
+            this.textBoxLine1.Margin = new System.Windows.Forms.Padding(0);
+            this.textBoxLine1.MaxLength = 29;
+            this.textBoxLine1.Name = "textBoxLine1";
+            this.textBoxLine1.Size = new System.Drawing.Size(528, 31);
+            this.textBoxLine1.TabIndex = 0;
+            this.textBoxLine1.Text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#";
+            // 
+            // textBoxHeader
+            // 
+            this.textBoxHeader.BackColor = System.Drawing.Color.White;
+            this.textBoxHeader.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxHeader.Font = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxHeader.Location = new System.Drawing.Point(42, 18);
+            this.textBoxHeader.Margin = new System.Windows.Forms.Padding(0);
+            this.textBoxHeader.MaxLength = 29;
+            this.textBoxHeader.Name = "textBoxHeader";
+            this.textBoxHeader.Size = new System.Drawing.Size(528, 29);
+            this.textBoxHeader.TabIndex = 26;
+            this.textBoxHeader.Text = "○£●△☀⊙★!♫◩♣□■?☹☁¿$¥☺♥€¡☂◐♠♦�▲";
+            // 
+            // panelLine1
+            // 
+            this.panelLine1.BackColor = System.Drawing.Color.White;
+            this.panelLine1.Controls.Add(this.labelLine1);
+            this.panelLine1.Location = new System.Drawing.Point(15, 54);
+            this.panelLine1.Margin = new System.Windows.Forms.Padding(0);
+            this.panelLine1.Name = "panelLine1";
+            this.panelLine1.Size = new System.Drawing.Size(555, 37);
+            this.panelLine1.TabIndex = 34;
+            // 
+            // labelLine1
+            // 
+            this.labelLine1.AutoSize = true;
+            this.labelLine1.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLine1.Location = new System.Drawing.Point(7, 6);
+            this.labelLine1.Name = "labelLine1";
+            this.labelLine1.Size = new System.Drawing.Size(16, 16);
+            this.labelLine1.TabIndex = 28;
+            this.labelLine1.Text = "1";
+            // 
+            // panelLine2
+            // 
+            this.panelLine2.BackColor = System.Drawing.Color.Silver;
+            this.panelLine2.Controls.Add(this.labelLine2);
+            this.panelLine2.Location = new System.Drawing.Point(15, 83);
+            this.panelLine2.Margin = new System.Windows.Forms.Padding(0);
+            this.panelLine2.Name = "panelLine2";
+            this.panelLine2.Size = new System.Drawing.Size(555, 37);
+            this.panelLine2.TabIndex = 29;
+            // 
+            // labelLine2
+            // 
+            this.labelLine2.AutoSize = true;
+            this.labelLine2.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLine2.Location = new System.Drawing.Point(7, 8);
+            this.labelLine2.Name = "labelLine2";
+            this.labelLine2.Size = new System.Drawing.Size(16, 16);
+            this.labelLine2.TabIndex = 28;
+            this.labelLine2.Text = "2";
+            // 
+            // panelLine3
+            // 
+            this.panelLine3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panelLine3.Controls.Add(this.labelLine3);
+            this.panelLine3.Location = new System.Drawing.Point(15, 115);
+            this.panelLine3.Margin = new System.Windows.Forms.Padding(0);
+            this.panelLine3.Name = "panelLine3";
+            this.panelLine3.Size = new System.Drawing.Size(555, 39);
+            this.panelLine3.TabIndex = 30;
+            // 
+            // labelLine3
+            // 
+            this.labelLine3.AutoSize = true;
+            this.labelLine3.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLine3.Location = new System.Drawing.Point(7, 6);
+            this.labelLine3.Name = "labelLine3";
+            this.labelLine3.Size = new System.Drawing.Size(16, 16);
+            this.labelLine3.TabIndex = 28;
+            this.labelLine3.Text = "3";
+            // 
+            // panelLine4
+            // 
+            this.panelLine4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panelLine4.Controls.Add(this.labelLine4);
+            this.panelLine4.Location = new System.Drawing.Point(15, 144);
+            this.panelLine4.Margin = new System.Windows.Forms.Padding(0);
+            this.panelLine4.Name = "panelLine4";
+            this.panelLine4.Size = new System.Drawing.Size(555, 39);
+            this.panelLine4.TabIndex = 31;
+            // 
+            // labelLine4
+            // 
+            this.labelLine4.AutoSize = true;
+            this.labelLine4.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLine4.Location = new System.Drawing.Point(7, 8);
+            this.labelLine4.Name = "labelLine4";
+            this.labelLine4.Size = new System.Drawing.Size(16, 16);
+            this.labelLine4.TabIndex = 28;
+            this.labelLine4.Text = "4";
+            // 
+            // panelLine5
+            // 
+            this.panelLine5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panelLine5.Controls.Add(this.labelLine5);
+            this.panelLine5.Location = new System.Drawing.Point(15, 176);
+            this.panelLine5.Margin = new System.Windows.Forms.Padding(0);
+            this.panelLine5.Name = "panelLine5";
+            this.panelLine5.Size = new System.Drawing.Size(555, 36);
+            this.panelLine5.TabIndex = 32;
+            // 
+            // labelLine5
+            // 
+            this.labelLine5.AutoSize = true;
+            this.labelLine5.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLine5.Location = new System.Drawing.Point(7, 8);
+            this.labelLine5.Name = "labelLine5";
+            this.labelLine5.Size = new System.Drawing.Size(16, 16);
+            this.labelLine5.TabIndex = 28;
+            this.labelLine5.Text = "5";
+            // 
+            // panelLine6
+            // 
+            this.panelLine6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panelLine6.Controls.Add(this.labelLine6);
+            this.panelLine6.Location = new System.Drawing.Point(15, 209);
+            this.panelLine6.Margin = new System.Windows.Forms.Padding(0);
+            this.panelLine6.Name = "panelLine6";
+            this.panelLine6.Size = new System.Drawing.Size(555, 38);
+            this.panelLine6.TabIndex = 33;
+            // 
+            // labelLine6
+            // 
+            this.labelLine6.AutoSize = true;
+            this.labelLine6.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLine6.Location = new System.Drawing.Point(7, 7);
+            this.labelLine6.Name = "labelLine6";
+            this.labelLine6.Size = new System.Drawing.Size(16, 16);
+            this.labelLine6.TabIndex = 28;
+            this.labelLine6.Text = "6";
+            // 
+            // panelLine7
+            // 
+            this.panelLine7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panelLine7.Controls.Add(this.labelLine7);
+            this.panelLine7.Location = new System.Drawing.Point(15, 239);
+            this.panelLine7.Margin = new System.Windows.Forms.Padding(0);
+            this.panelLine7.Name = "panelLine7";
+            this.panelLine7.Size = new System.Drawing.Size(555, 36);
+            this.panelLine7.TabIndex = 28;
+            // 
+            // labelLine7
+            // 
+            this.labelLine7.AutoSize = true;
+            this.labelLine7.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLine7.Location = new System.Drawing.Point(7, 7);
+            this.labelLine7.Name = "labelLine7";
+            this.labelLine7.Size = new System.Drawing.Size(16, 16);
+            this.labelLine7.TabIndex = 28;
+            this.labelLine7.Text = "7";
+            // 
+            // panelLine8
+            // 
+            this.panelLine8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelLine8.Controls.Add(this.labelLine8);
+            this.panelLine8.Location = new System.Drawing.Point(15, 270);
+            this.panelLine8.Margin = new System.Windows.Forms.Padding(0);
+            this.panelLine8.Name = "panelLine8";
+            this.panelLine8.Size = new System.Drawing.Size(555, 31);
+            this.panelLine8.TabIndex = 27;
+            // 
+            // labelLine8
+            // 
+            this.labelLine8.AutoSize = true;
+            this.labelLine8.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLine8.Location = new System.Drawing.Point(7, 7);
+            this.labelLine8.Name = "labelLine8";
+            this.labelLine8.Size = new System.Drawing.Size(16, 16);
+            this.labelLine8.TabIndex = 28;
+            this.labelLine8.Text = "8";
+            // 
+            // groupBoxPasswordCard
+            // 
+            this.groupBoxPasswordCard.BackColor = System.Drawing.Color.White;
+            this.groupBoxPasswordCard.Controls.Add(this.buttonGeneratePasswordCardFromSeed);
+            this.groupBoxPasswordCard.Controls.Add(this.labelSeed);
+            this.groupBoxPasswordCard.Controls.Add(this.textBoxSeed);
+            this.groupBoxPasswordCard.Controls.Add(this.textBoxHeader);
+            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine1);
+            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine2);
+            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine3);
+            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine4);
+            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine5);
+            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine6);
+            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine7);
+            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine8);
+            this.groupBoxPasswordCard.Controls.Add(this.panelLine8);
+            this.groupBoxPasswordCard.Controls.Add(this.panelLine7);
+            this.groupBoxPasswordCard.Controls.Add(this.panelLine6);
+            this.groupBoxPasswordCard.Controls.Add(this.panelLine5);
+            this.groupBoxPasswordCard.Controls.Add(this.panelLine4);
+            this.groupBoxPasswordCard.Controls.Add(this.panelLine3);
+            this.groupBoxPasswordCard.Controls.Add(this.panelLine2);
+            this.groupBoxPasswordCard.Controls.Add(this.panelLine1);
+            this.groupBoxPasswordCard.Location = new System.Drawing.Point(667, 12);
+            this.groupBoxPasswordCard.Name = "groupBoxPasswordCard";
+            this.groupBoxPasswordCard.Size = new System.Drawing.Size(586, 360);
+            this.groupBoxPasswordCard.TabIndex = 27;
+            this.groupBoxPasswordCard.TabStop = false;
+            this.groupBoxPasswordCard.Text = "Password Card";
+            // 
+            // buttonGeneratePasswordCardFromSeed
+            // 
+            this.buttonGeneratePasswordCardFromSeed.Location = new System.Drawing.Point(416, 314);
+            this.buttonGeneratePasswordCardFromSeed.Name = "buttonGeneratePasswordCardFromSeed";
+            this.buttonGeneratePasswordCardFromSeed.Size = new System.Drawing.Size(154, 30);
+            this.buttonGeneratePasswordCardFromSeed.TabIndex = 37;
+            this.buttonGeneratePasswordCardFromSeed.Text = "Generate Card";
+            this.buttonGeneratePasswordCardFromSeed.UseVisualStyleBackColor = true;
+            this.buttonGeneratePasswordCardFromSeed.Click += new System.EventHandler(this.ButtonGeneratePasswordCardFromSeed_Click);
+            // 
+            // labelSeed
+            // 
+            this.labelSeed.AutoSize = true;
+            this.labelSeed.Location = new System.Drawing.Point(52, 321);
+            this.labelSeed.Name = "labelSeed";
+            this.labelSeed.Size = new System.Drawing.Size(111, 17);
+            this.labelSeed.TabIndex = 36;
+            this.labelSeed.Text = "Enter your Seed";
+            // 
+            // textBoxSeed
+            // 
+            this.textBoxSeed.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.textBoxSeed.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSeed.Location = new System.Drawing.Point(169, 314);
+            this.textBoxSeed.MaxLength = 16;
+            this.textBoxSeed.Name = "textBoxSeed";
+            this.textBoxSeed.Size = new System.Drawing.Size(241, 30);
+            this.textBoxSeed.TabIndex = 35;
+            this.textBoxSeed.Text = "1234567890123456";
             // 
             // FormPasswordCardWordListGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1265, 727);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBoxSample);
+            this.Controls.Add(this.groupBoxPasswordCard);
             this.Controls.Add(this.labelNumberOfPasswordsGenerated);
             this.Controls.Add(this.groupBoxSettings);
             this.Controls.Add(this.groupBoxResources);
             this.Controls.Add(this.buttonGernerateWordList);
-            this.Controls.Add(this.textBoxLine8);
-            this.Controls.Add(this.textBoxLine7);
-            this.Controls.Add(this.textBoxLine6);
-            this.Controls.Add(this.textBoxLine5);
-            this.Controls.Add(this.textBoxLine4);
-            this.Controls.Add(this.textBoxLine3);
-            this.Controls.Add(this.textBoxLine2);
-            this.Controls.Add(this.textBoxLine1);
-            this.Controls.Add(this.pictureBoxSample);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormPasswordCardWordListGenerator";
@@ -669,22 +921,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTezosXTZRecoveryLogo)).EndInit();
             this.groupBoxSettings.ResumeLayout(false);
             this.groupBoxSettings.PerformLayout();
+            this.panelLine1.ResumeLayout(false);
+            this.panelLine1.PerformLayout();
+            this.panelLine2.ResumeLayout(false);
+            this.panelLine2.PerformLayout();
+            this.panelLine3.ResumeLayout(false);
+            this.panelLine3.PerformLayout();
+            this.panelLine4.ResumeLayout(false);
+            this.panelLine4.PerformLayout();
+            this.panelLine5.ResumeLayout(false);
+            this.panelLine5.PerformLayout();
+            this.panelLine6.ResumeLayout(false);
+            this.panelLine6.PerformLayout();
+            this.panelLine7.ResumeLayout(false);
+            this.panelLine7.PerformLayout();
+            this.panelLine8.ResumeLayout(false);
+            this.panelLine8.PerformLayout();
+            this.groupBoxPasswordCard.ResumeLayout(false);
+            this.groupBoxPasswordCard.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBoxLine1;
         private System.Windows.Forms.PictureBox pictureBoxSample;
-        private System.Windows.Forms.TextBox textBoxLine2;
-        private System.Windows.Forms.TextBox textBoxLine3;
-        private System.Windows.Forms.TextBox textBoxLine4;
-        private System.Windows.Forms.TextBox textBoxLine8;
-        private System.Windows.Forms.TextBox textBoxLine7;
-        private System.Windows.Forms.TextBox textBoxLine6;
-        private System.Windows.Forms.TextBox textBoxLine5;
         private System.Windows.Forms.Button buttonGernerateWordList;
         private System.Windows.Forms.CheckBox checkBoxLeftToRight;
         private System.Windows.Forms.CheckBox checkBoxLeftToRightThenUpAtEdge;
@@ -717,7 +978,35 @@
         private System.Windows.Forms.CheckBox checkBoxBottomToTop;
         private System.Windows.Forms.CheckBox checkBoxBottomToTopThenRightAtEdge;
         private System.Windows.Forms.CheckBox checkBoxBottomToTopThenLeftAtEdge;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxLine8;
+        private System.Windows.Forms.TextBox textBoxLine7;
+        private System.Windows.Forms.TextBox textBoxLine6;
+        private System.Windows.Forms.TextBox textBoxLine5;
+        private System.Windows.Forms.TextBox textBoxLine4;
+        private System.Windows.Forms.TextBox textBoxLine3;
+        private System.Windows.Forms.TextBox textBoxLine2;
+        private System.Windows.Forms.TextBox textBoxLine1;
+        private System.Windows.Forms.TextBox textBoxHeader;
+        private System.Windows.Forms.Panel panelLine1;
+        private System.Windows.Forms.Label labelLine1;
+        private System.Windows.Forms.Panel panelLine2;
+        private System.Windows.Forms.Label labelLine2;
+        private System.Windows.Forms.Panel panelLine3;
+        private System.Windows.Forms.Label labelLine3;
+        private System.Windows.Forms.Panel panelLine4;
+        private System.Windows.Forms.Label labelLine4;
+        private System.Windows.Forms.Panel panelLine5;
+        private System.Windows.Forms.Label labelLine5;
+        private System.Windows.Forms.Panel panelLine6;
+        private System.Windows.Forms.Label labelLine6;
+        private System.Windows.Forms.Panel panelLine7;
+        private System.Windows.Forms.Label labelLine7;
+        private System.Windows.Forms.Panel panelLine8;
+        private System.Windows.Forms.Label labelLine8;
+        private System.Windows.Forms.GroupBox groupBoxPasswordCard;
+        private System.Windows.Forms.Button buttonGeneratePasswordCardFromSeed;
+        private System.Windows.Forms.Label labelSeed;
+        private System.Windows.Forms.TextBox textBoxSeed;
     }
 }
 

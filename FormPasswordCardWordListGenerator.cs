@@ -475,19 +475,34 @@ namespace PasswordCardWordListGenerator
             }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+
+        private void ButtonGeneratePasswordCardFromSeed_Click(object sender, EventArgs e)
         {
-            PasswordCard pc = new PasswordCard("1");
-            textBoxLine1.Text = new string(pc.myPasswordCardGrid[1]);
-            textBoxLine2.Text = new string(pc.myPasswordCardGrid[2]);
-            textBoxLine3.Text = new string(pc.myPasswordCardGrid[3]);
-            textBoxLine4.Text = new string(pc.myPasswordCardGrid[4]);
-            textBoxLine5.Text = new string(pc.myPasswordCardGrid[5]);
-            textBoxLine6.Text = new string(pc.myPasswordCardGrid[6]);
-            textBoxLine7.Text = new string(pc.myPasswordCardGrid[7]);
-            textBoxLine8.Text = new string(pc.myPasswordCardGrid[8]);
+            GeneratePasswordCardFromSeed();
         }
 
+        private void GeneratePasswordCardFromSeed()
+        {
+            try
+            {
+                PasswordCard pc = new PasswordCard(textBoxSeed.Text);
+                textBoxHeader.Text = pc.MyHeader;
+                textBoxLine1.Text = new string(pc.myPasswordCardGrid[1]);
+                textBoxLine2.Text = new string(pc.myPasswordCardGrid[2]);
+                textBoxLine3.Text = new string(pc.myPasswordCardGrid[3]);
+                textBoxLine4.Text = new string(pc.myPasswordCardGrid[4]);
+                textBoxLine5.Text = new string(pc.myPasswordCardGrid[5]);
+                textBoxLine6.Text = new string(pc.myPasswordCardGrid[6]);
+                textBoxLine7.Text = new string(pc.myPasswordCardGrid[7]);
+                textBoxLine8.Text = new string(pc.myPasswordCardGrid[8]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Generating Password Card:\n\n" + ex.Message, "Error Generating Password Card", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
     }
 
     /// <summary>
