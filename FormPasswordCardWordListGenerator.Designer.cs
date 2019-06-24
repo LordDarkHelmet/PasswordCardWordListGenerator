@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPasswordCardWordListGenerator));
-            this.pictureBoxSample = new System.Windows.Forms.PictureBox();
             this.buttonGernerateWordList = new System.Windows.Forms.Button();
             this.checkBoxLeftToRight = new System.Windows.Forms.CheckBox();
             this.checkBoxLeftToRightThenUpAtEdge = new System.Windows.Forms.CheckBox();
@@ -55,6 +54,15 @@
             this.linkLabelGitHub = new System.Windows.Forms.LinkLabel();
             this.textBoxAbout = new System.Windows.Forms.TextBox();
             this.groupBoxSettings = new System.Windows.Forms.GroupBox();
+            this.checkBoxSpiralClockwiseStartRight = new System.Windows.Forms.CheckBox();
+            this.checkBoxDiagonalBottomUpToTheLeft = new System.Windows.Forms.CheckBox();
+            this.checkBoxDiagonalBottomUpToTheRight = new System.Windows.Forms.CheckBox();
+            this.checkBoxDiagonalTopDownToTheLeft = new System.Windows.Forms.CheckBox();
+            this.checkBoxDiagonalTopDownToTheRight = new System.Windows.Forms.CheckBox();
+            this.checkBoxZigZagRightToLeftThenDown = new System.Windows.Forms.CheckBox();
+            this.checkBoxZigZagRightToLeftThenUp = new System.Windows.Forms.CheckBox();
+            this.checkBoxZigZagLeftToRightThenUp = new System.Windows.Forms.CheckBox();
+            this.checkBoxZigZagLeftToRightThenDown = new System.Windows.Forms.CheckBox();
             this.checkBoxRightToLeft = new System.Windows.Forms.CheckBox();
             this.checkBoxRightToLeftThenUpAtEdge = new System.Windows.Forms.CheckBox();
             this.checkBoxRightToLeftThenDownAtEdge = new System.Windows.Forms.CheckBox();
@@ -88,10 +96,19 @@
             this.panelLine8 = new System.Windows.Forms.Panel();
             this.labelLine8 = new System.Windows.Forms.Label();
             this.groupBoxPasswordCard = new System.Windows.Forms.GroupBox();
+            this.checkBoxIncludeSymbols = new System.Windows.Forms.CheckBox();
+            this.checkBoxDigitOnlyArea = new System.Windows.Forms.CheckBox();
             this.buttonGeneratePasswordCardFromSeed = new System.Windows.Forms.Button();
             this.labelSeed = new System.Windows.Forms.Label();
             this.textBoxSeed = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSample)).BeginInit();
+            this.checkBoxSpiralClockwiseLeft = new System.Windows.Forms.CheckBox();
+            this.checkBoxSpiralClockwiseStartUp = new System.Windows.Forms.CheckBox();
+            this.checkBoxSpiralClockwiseStartDown = new System.Windows.Forms.CheckBox();
+            this.checkBoxSpiralCounterclockwiseStartDown = new System.Windows.Forms.CheckBox();
+            this.checkBoxSpiralCounterclockwiseStartUp = new System.Windows.Forms.CheckBox();
+            this.checkBoxSpiralCounterclockwiseStartLeft = new System.Windows.Forms.CheckBox();
+            this.checkBoxSpiralCounterclockwiseStartRight = new System.Windows.Forms.CheckBox();
+            this.pictureBoxSample = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaximumPasswordLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinimumPasswordLength)).BeginInit();
             this.groupBoxResources.SuspendLayout();
@@ -106,27 +123,16 @@
             this.panelLine7.SuspendLayout();
             this.panelLine8.SuspendLayout();
             this.groupBoxPasswordCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSample)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBoxSample
-            // 
-            this.pictureBoxSample.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSample.Image")));
-            this.pictureBoxSample.Location = new System.Drawing.Point(79, 28);
-            this.pictureBoxSample.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxSample.Name = "pictureBoxSample";
-            this.pictureBoxSample.Size = new System.Drawing.Size(436, 366);
-            this.pictureBoxSample.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxSample.TabIndex = 1;
-            this.pictureBoxSample.TabStop = false;
-            this.pictureBoxSample.Click += new System.EventHandler(this.PictureBoxSample_Click);
             // 
             // buttonGernerateWordList
             // 
             this.buttonGernerateWordList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGernerateWordList.Location = new System.Drawing.Point(1021, 651);
+            this.buttonGernerateWordList.Location = new System.Drawing.Point(962, 710);
             this.buttonGernerateWordList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonGernerateWordList.Name = "buttonGernerateWordList";
-            this.buttonGernerateWordList.Size = new System.Drawing.Size(232, 65);
+            this.buttonGernerateWordList.Size = new System.Drawing.Size(237, 65);
             this.buttonGernerateWordList.TabIndex = 9;
             this.buttonGernerateWordList.Text = "Generate Word List";
             this.buttonGernerateWordList.UseVisualStyleBackColor = true;
@@ -135,9 +141,7 @@
             // checkBoxLeftToRight
             // 
             this.checkBoxLeftToRight.AutoSize = true;
-            this.checkBoxLeftToRight.Checked = true;
-            this.checkBoxLeftToRight.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxLeftToRight.Location = new System.Drawing.Point(7, 22);
+            this.checkBoxLeftToRight.Location = new System.Drawing.Point(7, 258);
             this.checkBoxLeftToRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxLeftToRight.Name = "checkBoxLeftToRight";
             this.checkBoxLeftToRight.Size = new System.Drawing.Size(112, 21);
@@ -148,9 +152,7 @@
             // checkBoxLeftToRightThenUpAtEdge
             // 
             this.checkBoxLeftToRightThenUpAtEdge.AutoSize = true;
-            this.checkBoxLeftToRightThenUpAtEdge.Checked = true;
-            this.checkBoxLeftToRightThenUpAtEdge.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxLeftToRightThenUpAtEdge.Location = new System.Drawing.Point(7, 50);
+            this.checkBoxLeftToRightThenUpAtEdge.Location = new System.Drawing.Point(7, 324);
             this.checkBoxLeftToRightThenUpAtEdge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxLeftToRightThenUpAtEdge.Name = "checkBoxLeftToRightThenUpAtEdge";
             this.checkBoxLeftToRightThenUpAtEdge.Size = new System.Drawing.Size(225, 21);
@@ -161,9 +163,7 @@
             // checkBoxLeftToRightThenDownAtEdge
             // 
             this.checkBoxLeftToRightThenDownAtEdge.AutoSize = true;
-            this.checkBoxLeftToRightThenDownAtEdge.Checked = true;
-            this.checkBoxLeftToRightThenDownAtEdge.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxLeftToRightThenDownAtEdge.Location = new System.Drawing.Point(7, 79);
+            this.checkBoxLeftToRightThenDownAtEdge.Location = new System.Drawing.Point(7, 349);
             this.checkBoxLeftToRightThenDownAtEdge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxLeftToRightThenDownAtEdge.Name = "checkBoxLeftToRightThenDownAtEdge";
             this.checkBoxLeftToRightThenDownAtEdge.Size = new System.Drawing.Size(242, 21);
@@ -174,9 +174,7 @@
             // checkBoxTopToBottom
             // 
             this.checkBoxTopToBottom.AutoSize = true;
-            this.checkBoxTopToBottom.Checked = true;
-            this.checkBoxTopToBottom.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTopToBottom.Location = new System.Drawing.Point(7, 107);
+            this.checkBoxTopToBottom.Location = new System.Drawing.Point(7, 284);
             this.checkBoxTopToBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxTopToBottom.Name = "checkBoxTopToBottom";
             this.checkBoxTopToBottom.Size = new System.Drawing.Size(124, 21);
@@ -187,9 +185,7 @@
             // checkBoxTopToBottomThenRightAtEdge
             // 
             this.checkBoxTopToBottomThenRightAtEdge.AutoSize = true;
-            this.checkBoxTopToBottomThenRightAtEdge.Checked = true;
-            this.checkBoxTopToBottomThenRightAtEdge.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTopToBottomThenRightAtEdge.Location = new System.Drawing.Point(7, 134);
+            this.checkBoxTopToBottomThenRightAtEdge.Location = new System.Drawing.Point(7, 389);
             this.checkBoxTopToBottomThenRightAtEdge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxTopToBottomThenRightAtEdge.Name = "checkBoxTopToBottomThenRightAtEdge";
             this.checkBoxTopToBottomThenRightAtEdge.Size = new System.Drawing.Size(252, 21);
@@ -200,9 +196,7 @@
             // checkBoxTopToBottomThenLeftAtEdge
             // 
             this.checkBoxTopToBottomThenLeftAtEdge.AutoSize = true;
-            this.checkBoxTopToBottomThenLeftAtEdge.Checked = true;
-            this.checkBoxTopToBottomThenLeftAtEdge.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTopToBottomThenLeftAtEdge.Location = new System.Drawing.Point(7, 162);
+            this.checkBoxTopToBottomThenLeftAtEdge.Location = new System.Drawing.Point(7, 414);
             this.checkBoxTopToBottomThenLeftAtEdge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxTopToBottomThenLeftAtEdge.Name = "checkBoxTopToBottomThenLeftAtEdge";
             this.checkBoxTopToBottomThenLeftAtEdge.Size = new System.Drawing.Size(243, 21);
@@ -212,11 +206,11 @@
             // 
             // numericUpDownMaximumPasswordLength
             // 
-            this.numericUpDownMaximumPasswordLength.Location = new System.Drawing.Point(195, 219);
+            this.numericUpDownMaximumPasswordLength.Location = new System.Drawing.Point(392, 53);
             this.numericUpDownMaximumPasswordLength.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDownMaximumPasswordLength.Maximum = new decimal(new int[] {
-            36,
-            0,
+            1410065407,
+            2,
             0,
             0});
             this.numericUpDownMaximumPasswordLength.Minimum = new decimal(new int[] {
@@ -235,11 +229,11 @@
             // 
             // numericUpDownMinimumPasswordLength
             // 
-            this.numericUpDownMinimumPasswordLength.Location = new System.Drawing.Point(195, 192);
+            this.numericUpDownMinimumPasswordLength.Location = new System.Drawing.Point(392, 26);
             this.numericUpDownMinimumPasswordLength.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDownMinimumPasswordLength.Maximum = new decimal(new int[] {
-            37,
-            0,
+            276447231,
+            23283,
             0,
             0});
             this.numericUpDownMinimumPasswordLength.Minimum = new decimal(new int[] {
@@ -259,7 +253,7 @@
             // labelMinimumPasswordLength
             // 
             this.labelMinimumPasswordLength.AutoSize = true;
-            this.labelMinimumPasswordLength.Location = new System.Drawing.Point(266, 193);
+            this.labelMinimumPasswordLength.Location = new System.Drawing.Point(463, 27);
             this.labelMinimumPasswordLength.Name = "labelMinimumPasswordLength";
             this.labelMinimumPasswordLength.Size = new System.Drawing.Size(111, 17);
             this.labelMinimumPasswordLength.TabIndex = 19;
@@ -268,7 +262,7 @@
             // labelMaximumPasswordLength
             // 
             this.labelMaximumPasswordLength.AutoSize = true;
-            this.labelMaximumPasswordLength.Location = new System.Drawing.Point(266, 222);
+            this.labelMaximumPasswordLength.Location = new System.Drawing.Point(463, 56);
             this.labelMaximumPasswordLength.Name = "labelMaximumPasswordLength";
             this.labelMaximumPasswordLength.Size = new System.Drawing.Size(114, 17);
             this.labelMaximumPasswordLength.TabIndex = 20;
@@ -288,11 +282,11 @@
             this.groupBoxResources.Controls.Add(this.textBoxDeveloperInfo);
             this.groupBoxResources.Controls.Add(this.linkLabelGitHub);
             this.groupBoxResources.Controls.Add(this.textBoxAbout);
-            this.groupBoxResources.Location = new System.Drawing.Point(12, 398);
+            this.groupBoxResources.Location = new System.Drawing.Point(17, 457);
             this.groupBoxResources.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxResources.Name = "groupBoxResources";
             this.groupBoxResources.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxResources.Size = new System.Drawing.Size(625, 318);
+            this.groupBoxResources.Size = new System.Drawing.Size(586, 318);
             this.groupBoxResources.TabIndex = 22;
             this.groupBoxResources.TabStop = false;
             this.groupBoxResources.Text = "Additional Resources";
@@ -372,7 +366,7 @@
             // linkLabelTelegram
             // 
             this.linkLabelTelegram.AutoSize = true;
-            this.linkLabelTelegram.Location = new System.Drawing.Point(451, 82);
+            this.linkLabelTelegram.Location = new System.Drawing.Point(412, 82);
             this.linkLabelTelegram.Name = "linkLabelTelegram";
             this.linkLabelTelegram.Size = new System.Drawing.Size(166, 17);
             this.linkLabelTelegram.TabIndex = 20;
@@ -384,7 +378,7 @@
             // linkLabelEmail
             // 
             this.linkLabelEmail.AutoSize = true;
-            this.linkLabelEmail.Location = new System.Drawing.Point(451, 199);
+            this.linkLabelEmail.Location = new System.Drawing.Point(412, 199);
             this.linkLabelEmail.Name = "linkLabelEmail";
             this.linkLabelEmail.Size = new System.Drawing.Size(166, 17);
             this.linkLabelEmail.TabIndex = 24;
@@ -395,7 +389,7 @@
             // 
             // pictureBoxTezosXTZRecoveryLogo
             // 
-            this.pictureBoxTezosXTZRecoveryLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTezosXTZRecoveryLogo.Image")));
+            this.pictureBoxTezosXTZRecoveryLogo.Image = global::PasswordCardWordListGenerator.Properties.Resources.TezosRecoveryPicture;
             this.pictureBoxTezosXTZRecoveryLogo.Location = new System.Drawing.Point(5, 16);
             this.pictureBoxTezosXTZRecoveryLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxTezosXTZRecoveryLogo.Name = "pictureBoxTezosXTZRecoveryLogo";
@@ -421,7 +415,7 @@
             // linkLabelGitHub
             // 
             this.linkLabelGitHub.AutoSize = true;
-            this.linkLabelGitHub.Location = new System.Drawing.Point(451, 146);
+            this.linkLabelGitHub.Location = new System.Drawing.Point(412, 146);
             this.linkLabelGitHub.Name = "linkLabelGitHub";
             this.linkLabelGitHub.Size = new System.Drawing.Size(169, 17);
             this.linkLabelGitHub.TabIndex = 22;
@@ -439,13 +433,30 @@
             this.textBoxAbout.Multiline = true;
             this.textBoxAbout.Name = "textBoxAbout";
             this.textBoxAbout.ReadOnly = true;
-            this.textBoxAbout.Size = new System.Drawing.Size(408, 58);
+            this.textBoxAbout.Size = new System.Drawing.Size(358, 58);
             this.textBoxAbout.TabIndex = 21;
             this.textBoxAbout.Text = "This program was made by the Tezos XTZ Recovery group. It is here to make crackin" +
     "g your password a little bit easier. If you need help, please join out group.";
             // 
             // groupBoxSettings
             // 
+            this.groupBoxSettings.Controls.Add(this.pictureBoxSample);
+            this.groupBoxSettings.Controls.Add(this.checkBoxSpiralCounterclockwiseStartDown);
+            this.groupBoxSettings.Controls.Add(this.checkBoxSpiralCounterclockwiseStartUp);
+            this.groupBoxSettings.Controls.Add(this.checkBoxSpiralCounterclockwiseStartLeft);
+            this.groupBoxSettings.Controls.Add(this.checkBoxSpiralCounterclockwiseStartRight);
+            this.groupBoxSettings.Controls.Add(this.checkBoxSpiralClockwiseStartDown);
+            this.groupBoxSettings.Controls.Add(this.checkBoxSpiralClockwiseStartUp);
+            this.groupBoxSettings.Controls.Add(this.checkBoxSpiralClockwiseLeft);
+            this.groupBoxSettings.Controls.Add(this.checkBoxSpiralClockwiseStartRight);
+            this.groupBoxSettings.Controls.Add(this.checkBoxDiagonalBottomUpToTheLeft);
+            this.groupBoxSettings.Controls.Add(this.checkBoxDiagonalBottomUpToTheRight);
+            this.groupBoxSettings.Controls.Add(this.checkBoxDiagonalTopDownToTheLeft);
+            this.groupBoxSettings.Controls.Add(this.checkBoxDiagonalTopDownToTheRight);
+            this.groupBoxSettings.Controls.Add(this.checkBoxZigZagRightToLeftThenDown);
+            this.groupBoxSettings.Controls.Add(this.checkBoxZigZagRightToLeftThenUp);
+            this.groupBoxSettings.Controls.Add(this.checkBoxZigZagLeftToRightThenUp);
+            this.groupBoxSettings.Controls.Add(this.checkBoxZigZagLeftToRightThenDown);
             this.groupBoxSettings.Controls.Add(this.checkBoxRightToLeft);
             this.groupBoxSettings.Controls.Add(this.checkBoxRightToLeftThenUpAtEdge);
             this.groupBoxSettings.Controls.Add(this.checkBoxRightToLeftThenDownAtEdge);
@@ -462,21 +473,118 @@
             this.groupBoxSettings.Controls.Add(this.checkBoxTopToBottomThenRightAtEdge);
             this.groupBoxSettings.Controls.Add(this.numericUpDownMaximumPasswordLength);
             this.groupBoxSettings.Controls.Add(this.checkBoxTopToBottomThenLeftAtEdge);
-            this.groupBoxSettings.Location = new System.Drawing.Point(667, 398);
+            this.groupBoxSettings.Location = new System.Drawing.Point(610, 13);
             this.groupBoxSettings.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxSettings.Name = "groupBoxSettings";
             this.groupBoxSettings.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxSettings.Size = new System.Drawing.Size(589, 247);
+            this.groupBoxSettings.Size = new System.Drawing.Size(589, 691);
             this.groupBoxSettings.TabIndex = 23;
             this.groupBoxSettings.TabStop = false;
             this.groupBoxSettings.Text = "Settings";
             // 
+            // checkBoxSpiralClockwiseStartRight
+            // 
+            this.checkBoxSpiralClockwiseStartRight.AutoSize = true;
+            this.checkBoxSpiralClockwiseStartRight.Location = new System.Drawing.Point(7, 587);
+            this.checkBoxSpiralClockwiseStartRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxSpiralClockwiseStartRight.Name = "checkBoxSpiralClockwiseStartRight";
+            this.checkBoxSpiralClockwiseStartRight.Size = new System.Drawing.Size(206, 21);
+            this.checkBoxSpiralClockwiseStartRight.TabIndex = 35;
+            this.checkBoxSpiralClockwiseStartRight.Text = "Spiral Clockwise, Start Right";
+            this.checkBoxSpiralClockwiseStartRight.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDiagonalBottomUpToTheLeft
+            // 
+            this.checkBoxDiagonalBottomUpToTheLeft.AutoSize = true;
+            this.checkBoxDiagonalBottomUpToTheLeft.Location = new System.Drawing.Point(311, 546);
+            this.checkBoxDiagonalBottomUpToTheLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxDiagonalBottomUpToTheLeft.Name = "checkBoxDiagonalBottomUpToTheLeft";
+            this.checkBoxDiagonalBottomUpToTheLeft.Size = new System.Drawing.Size(238, 21);
+            this.checkBoxDiagonalBottomUpToTheLeft.TabIndex = 34;
+            this.checkBoxDiagonalBottomUpToTheLeft.Text = "Diagonal Bottom, Up To The Left";
+            this.checkBoxDiagonalBottomUpToTheLeft.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDiagonalBottomUpToTheRight
+            // 
+            this.checkBoxDiagonalBottomUpToTheRight.AutoSize = true;
+            this.checkBoxDiagonalBottomUpToTheRight.Location = new System.Drawing.Point(311, 520);
+            this.checkBoxDiagonalBottomUpToTheRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxDiagonalBottomUpToTheRight.Name = "checkBoxDiagonalBottomUpToTheRight";
+            this.checkBoxDiagonalBottomUpToTheRight.Size = new System.Drawing.Size(247, 21);
+            this.checkBoxDiagonalBottomUpToTheRight.TabIndex = 33;
+            this.checkBoxDiagonalBottomUpToTheRight.Text = "Diagonal Bottom, Up To The Right";
+            this.checkBoxDiagonalBottomUpToTheRight.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDiagonalTopDownToTheLeft
+            // 
+            this.checkBoxDiagonalTopDownToTheLeft.AutoSize = true;
+            this.checkBoxDiagonalTopDownToTheLeft.Location = new System.Drawing.Point(7, 545);
+            this.checkBoxDiagonalTopDownToTheLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxDiagonalTopDownToTheLeft.Name = "checkBoxDiagonalTopDownToTheLeft";
+            this.checkBoxDiagonalTopDownToTheLeft.Size = new System.Drawing.Size(236, 21);
+            this.checkBoxDiagonalTopDownToTheLeft.TabIndex = 32;
+            this.checkBoxDiagonalTopDownToTheLeft.Text = "Diagonal Top, Down To The Left";
+            this.checkBoxDiagonalTopDownToTheLeft.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDiagonalTopDownToTheRight
+            // 
+            this.checkBoxDiagonalTopDownToTheRight.AutoSize = true;
+            this.checkBoxDiagonalTopDownToTheRight.Location = new System.Drawing.Point(7, 520);
+            this.checkBoxDiagonalTopDownToTheRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxDiagonalTopDownToTheRight.Name = "checkBoxDiagonalTopDownToTheRight";
+            this.checkBoxDiagonalTopDownToTheRight.Size = new System.Drawing.Size(245, 21);
+            this.checkBoxDiagonalTopDownToTheRight.TabIndex = 31;
+            this.checkBoxDiagonalTopDownToTheRight.Text = "Diagonal Top, Down To The Right";
+            this.checkBoxDiagonalTopDownToTheRight.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxZigZagRightToLeftThenDown
+            // 
+            this.checkBoxZigZagRightToLeftThenDown.AutoSize = true;
+            this.checkBoxZigZagRightToLeftThenDown.Location = new System.Drawing.Point(311, 454);
+            this.checkBoxZigZagRightToLeftThenDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxZigZagRightToLeftThenDown.Name = "checkBoxZigZagRightToLeftThenDown";
+            this.checkBoxZigZagRightToLeftThenDown.Size = new System.Drawing.Size(241, 21);
+            this.checkBoxZigZagRightToLeftThenDown.TabIndex = 30;
+            this.checkBoxZigZagRightToLeftThenDown.Text = "Zig Zag Right To Left Then Down";
+            this.checkBoxZigZagRightToLeftThenDown.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxZigZagRightToLeftThenUp
+            // 
+            this.checkBoxZigZagRightToLeftThenUp.AutoSize = true;
+            this.checkBoxZigZagRightToLeftThenUp.Location = new System.Drawing.Point(311, 479);
+            this.checkBoxZigZagRightToLeftThenUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxZigZagRightToLeftThenUp.Name = "checkBoxZigZagRightToLeftThenUp";
+            this.checkBoxZigZagRightToLeftThenUp.Size = new System.Drawing.Size(224, 21);
+            this.checkBoxZigZagRightToLeftThenUp.TabIndex = 29;
+            this.checkBoxZigZagRightToLeftThenUp.Text = "Zig Zag Right To Left Then Up";
+            this.checkBoxZigZagRightToLeftThenUp.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxZigZagLeftToRightThenUp
+            // 
+            this.checkBoxZigZagLeftToRightThenUp.AutoSize = true;
+            this.checkBoxZigZagLeftToRightThenUp.Location = new System.Drawing.Point(7, 479);
+            this.checkBoxZigZagLeftToRightThenUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxZigZagLeftToRightThenUp.Name = "checkBoxZigZagLeftToRightThenUp";
+            this.checkBoxZigZagLeftToRightThenUp.Size = new System.Drawing.Size(224, 21);
+            this.checkBoxZigZagLeftToRightThenUp.TabIndex = 28;
+            this.checkBoxZigZagLeftToRightThenUp.Text = "Zig Zag Left To Right Then Up";
+            this.checkBoxZigZagLeftToRightThenUp.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxZigZagLeftToRightThenDown
+            // 
+            this.checkBoxZigZagLeftToRightThenDown.AutoSize = true;
+            this.checkBoxZigZagLeftToRightThenDown.Location = new System.Drawing.Point(7, 454);
+            this.checkBoxZigZagLeftToRightThenDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxZigZagLeftToRightThenDown.Name = "checkBoxZigZagLeftToRightThenDown";
+            this.checkBoxZigZagLeftToRightThenDown.Size = new System.Drawing.Size(241, 21);
+            this.checkBoxZigZagLeftToRightThenDown.TabIndex = 27;
+            this.checkBoxZigZagLeftToRightThenDown.Text = "Zig Zag Left To Right Then Down";
+            this.checkBoxZigZagLeftToRightThenDown.UseVisualStyleBackColor = true;
+            // 
             // checkBoxRightToLeft
             // 
             this.checkBoxRightToLeft.AutoSize = true;
-            this.checkBoxRightToLeft.Checked = true;
-            this.checkBoxRightToLeft.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxRightToLeft.Location = new System.Drawing.Point(323, 22);
+            this.checkBoxRightToLeft.Location = new System.Drawing.Point(311, 258);
             this.checkBoxRightToLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxRightToLeft.Name = "checkBoxRightToLeft";
             this.checkBoxRightToLeft.Size = new System.Drawing.Size(112, 21);
@@ -487,9 +595,7 @@
             // checkBoxRightToLeftThenUpAtEdge
             // 
             this.checkBoxRightToLeftThenUpAtEdge.AutoSize = true;
-            this.checkBoxRightToLeftThenUpAtEdge.Checked = true;
-            this.checkBoxRightToLeftThenUpAtEdge.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxRightToLeftThenUpAtEdge.Location = new System.Drawing.Point(323, 50);
+            this.checkBoxRightToLeftThenUpAtEdge.Location = new System.Drawing.Point(311, 323);
             this.checkBoxRightToLeftThenUpAtEdge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxRightToLeftThenUpAtEdge.Name = "checkBoxRightToLeftThenUpAtEdge";
             this.checkBoxRightToLeftThenUpAtEdge.Size = new System.Drawing.Size(225, 21);
@@ -500,9 +606,7 @@
             // checkBoxRightToLeftThenDownAtEdge
             // 
             this.checkBoxRightToLeftThenDownAtEdge.AutoSize = true;
-            this.checkBoxRightToLeftThenDownAtEdge.Checked = true;
-            this.checkBoxRightToLeftThenDownAtEdge.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxRightToLeftThenDownAtEdge.Location = new System.Drawing.Point(323, 79);
+            this.checkBoxRightToLeftThenDownAtEdge.Location = new System.Drawing.Point(311, 348);
             this.checkBoxRightToLeftThenDownAtEdge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxRightToLeftThenDownAtEdge.Name = "checkBoxRightToLeftThenDownAtEdge";
             this.checkBoxRightToLeftThenDownAtEdge.Size = new System.Drawing.Size(242, 21);
@@ -513,9 +617,7 @@
             // checkBoxBottomToTop
             // 
             this.checkBoxBottomToTop.AutoSize = true;
-            this.checkBoxBottomToTop.Checked = true;
-            this.checkBoxBottomToTop.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxBottomToTop.Location = new System.Drawing.Point(323, 107);
+            this.checkBoxBottomToTop.Location = new System.Drawing.Point(311, 283);
             this.checkBoxBottomToTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxBottomToTop.Name = "checkBoxBottomToTop";
             this.checkBoxBottomToTop.Size = new System.Drawing.Size(119, 21);
@@ -526,9 +628,7 @@
             // checkBoxBottomToTopThenRightAtEdge
             // 
             this.checkBoxBottomToTopThenRightAtEdge.AutoSize = true;
-            this.checkBoxBottomToTopThenRightAtEdge.Checked = true;
-            this.checkBoxBottomToTopThenRightAtEdge.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxBottomToTopThenRightAtEdge.Location = new System.Drawing.Point(323, 134);
+            this.checkBoxBottomToTopThenRightAtEdge.Location = new System.Drawing.Point(311, 388);
             this.checkBoxBottomToTopThenRightAtEdge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxBottomToTopThenRightAtEdge.Name = "checkBoxBottomToTopThenRightAtEdge";
             this.checkBoxBottomToTopThenRightAtEdge.Size = new System.Drawing.Size(247, 21);
@@ -539,9 +639,7 @@
             // checkBoxBottomToTopThenLeftAtEdge
             // 
             this.checkBoxBottomToTopThenLeftAtEdge.AutoSize = true;
-            this.checkBoxBottomToTopThenLeftAtEdge.Checked = true;
-            this.checkBoxBottomToTopThenLeftAtEdge.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxBottomToTopThenLeftAtEdge.Location = new System.Drawing.Point(323, 162);
+            this.checkBoxBottomToTopThenLeftAtEdge.Location = new System.Drawing.Point(311, 413);
             this.checkBoxBottomToTopThenLeftAtEdge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxBottomToTopThenLeftAtEdge.Name = "checkBoxBottomToTopThenLeftAtEdge";
             this.checkBoxBottomToTopThenLeftAtEdge.Size = new System.Drawing.Size(238, 21);
@@ -553,7 +651,7 @@
             // 
             this.labelNumberOfPasswordsGenerated.AutoSize = true;
             this.labelNumberOfPasswordsGenerated.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumberOfPasswordsGenerated.Location = new System.Drawing.Point(663, 675);
+            this.labelNumberOfPasswordsGenerated.Location = new System.Drawing.Point(613, 734);
             this.labelNumberOfPasswordsGenerated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNumberOfPasswordsGenerated.Name = "labelNumberOfPasswordsGenerated";
             this.labelNumberOfPasswordsGenerated.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -563,10 +661,13 @@
             // 
             // textBoxLine8
             // 
+            this.textBoxLine8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLine8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.textBoxLine8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxLine8.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine8.Location = new System.Drawing.Point(42, 270);
+            this.textBoxLine8.Location = new System.Drawing.Point(24, 3);
             this.textBoxLine8.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxLine8.MaxLength = 29;
             this.textBoxLine8.Name = "textBoxLine8";
@@ -576,10 +677,13 @@
             // 
             // textBoxLine7
             // 
+            this.textBoxLine7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLine7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textBoxLine7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxLine7.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine7.Location = new System.Drawing.Point(42, 239);
+            this.textBoxLine7.Location = new System.Drawing.Point(24, 3);
             this.textBoxLine7.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxLine7.MaxLength = 29;
             this.textBoxLine7.Name = "textBoxLine7";
@@ -589,10 +693,13 @@
             // 
             // textBoxLine6
             // 
+            this.textBoxLine6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLine6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textBoxLine6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxLine6.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine6.Location = new System.Drawing.Point(42, 209);
+            this.textBoxLine6.Location = new System.Drawing.Point(24, 3);
             this.textBoxLine6.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxLine6.MaxLength = 29;
             this.textBoxLine6.Name = "textBoxLine6";
@@ -602,10 +709,13 @@
             // 
             // textBoxLine5
             // 
+            this.textBoxLine5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLine5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.textBoxLine5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxLine5.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine5.Location = new System.Drawing.Point(42, 177);
+            this.textBoxLine5.Location = new System.Drawing.Point(24, 3);
             this.textBoxLine5.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxLine5.MaxLength = 29;
             this.textBoxLine5.Name = "textBoxLine5";
@@ -615,10 +725,13 @@
             // 
             // textBoxLine4
             // 
+            this.textBoxLine4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLine4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.textBoxLine4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxLine4.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine4.Location = new System.Drawing.Point(42, 145);
+            this.textBoxLine4.Location = new System.Drawing.Point(24, 3);
             this.textBoxLine4.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxLine4.MaxLength = 29;
             this.textBoxLine4.Name = "textBoxLine4";
@@ -628,10 +741,13 @@
             // 
             // textBoxLine3
             // 
+            this.textBoxLine3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLine3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.textBoxLine3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxLine3.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine3.Location = new System.Drawing.Point(42, 114);
+            this.textBoxLine3.Location = new System.Drawing.Point(24, 3);
             this.textBoxLine3.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxLine3.MaxLength = 29;
             this.textBoxLine3.Name = "textBoxLine3";
@@ -641,10 +757,13 @@
             // 
             // textBoxLine2
             // 
+            this.textBoxLine2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLine2.BackColor = System.Drawing.Color.Silver;
             this.textBoxLine2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxLine2.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine2.Location = new System.Drawing.Point(42, 83);
+            this.textBoxLine2.Location = new System.Drawing.Point(24, 3);
             this.textBoxLine2.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxLine2.MaxLength = 29;
             this.textBoxLine2.Name = "textBoxLine2";
@@ -654,10 +773,13 @@
             // 
             // textBoxLine1
             // 
+            this.textBoxLine1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLine1.BackColor = System.Drawing.Color.White;
             this.textBoxLine1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxLine1.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLine1.Location = new System.Drawing.Point(42, 52);
+            this.textBoxLine1.Location = new System.Drawing.Point(24, 3);
             this.textBoxLine1.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxLine1.MaxLength = 29;
             this.textBoxLine1.Name = "textBoxLine1";
@@ -682,17 +804,18 @@
             // 
             this.panelLine1.BackColor = System.Drawing.Color.White;
             this.panelLine1.Controls.Add(this.labelLine1);
+            this.panelLine1.Controls.Add(this.textBoxLine1);
             this.panelLine1.Location = new System.Drawing.Point(15, 54);
             this.panelLine1.Margin = new System.Windows.Forms.Padding(0);
             this.panelLine1.Name = "panelLine1";
-            this.panelLine1.Size = new System.Drawing.Size(555, 37);
+            this.panelLine1.Size = new System.Drawing.Size(555, 62);
             this.panelLine1.TabIndex = 34;
             // 
             // labelLine1
             // 
             this.labelLine1.AutoSize = true;
             this.labelLine1.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLine1.Location = new System.Drawing.Point(7, 6);
+            this.labelLine1.Location = new System.Drawing.Point(7, 10);
             this.labelLine1.Name = "labelLine1";
             this.labelLine1.Size = new System.Drawing.Size(16, 16);
             this.labelLine1.TabIndex = 28;
@@ -702,17 +825,18 @@
             // 
             this.panelLine2.BackColor = System.Drawing.Color.Silver;
             this.panelLine2.Controls.Add(this.labelLine2);
-            this.panelLine2.Location = new System.Drawing.Point(15, 83);
+            this.panelLine2.Controls.Add(this.textBoxLine2);
+            this.panelLine2.Location = new System.Drawing.Point(15, 92);
             this.panelLine2.Margin = new System.Windows.Forms.Padding(0);
             this.panelLine2.Name = "panelLine2";
-            this.panelLine2.Size = new System.Drawing.Size(555, 37);
+            this.panelLine2.Size = new System.Drawing.Size(555, 64);
             this.panelLine2.TabIndex = 29;
             // 
             // labelLine2
             // 
             this.labelLine2.AutoSize = true;
             this.labelLine2.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLine2.Location = new System.Drawing.Point(7, 8);
+            this.labelLine2.Location = new System.Drawing.Point(7, 10);
             this.labelLine2.Name = "labelLine2";
             this.labelLine2.Size = new System.Drawing.Size(16, 16);
             this.labelLine2.TabIndex = 28;
@@ -722,17 +846,18 @@
             // 
             this.panelLine3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panelLine3.Controls.Add(this.labelLine3);
-            this.panelLine3.Location = new System.Drawing.Point(15, 115);
+            this.panelLine3.Controls.Add(this.textBoxLine3);
+            this.panelLine3.Location = new System.Drawing.Point(15, 130);
             this.panelLine3.Margin = new System.Windows.Forms.Padding(0);
             this.panelLine3.Name = "panelLine3";
-            this.panelLine3.Size = new System.Drawing.Size(555, 39);
+            this.panelLine3.Size = new System.Drawing.Size(555, 65);
             this.panelLine3.TabIndex = 30;
             // 
             // labelLine3
             // 
             this.labelLine3.AutoSize = true;
             this.labelLine3.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLine3.Location = new System.Drawing.Point(7, 6);
+            this.labelLine3.Location = new System.Drawing.Point(7, 10);
             this.labelLine3.Name = "labelLine3";
             this.labelLine3.Size = new System.Drawing.Size(16, 16);
             this.labelLine3.TabIndex = 28;
@@ -742,17 +867,18 @@
             // 
             this.panelLine4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panelLine4.Controls.Add(this.labelLine4);
-            this.panelLine4.Location = new System.Drawing.Point(15, 144);
+            this.panelLine4.Controls.Add(this.textBoxLine4);
+            this.panelLine4.Location = new System.Drawing.Point(15, 168);
             this.panelLine4.Margin = new System.Windows.Forms.Padding(0);
             this.panelLine4.Name = "panelLine4";
-            this.panelLine4.Size = new System.Drawing.Size(555, 39);
+            this.panelLine4.Size = new System.Drawing.Size(555, 48);
             this.panelLine4.TabIndex = 31;
             // 
             // labelLine4
             // 
             this.labelLine4.AutoSize = true;
             this.labelLine4.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLine4.Location = new System.Drawing.Point(7, 8);
+            this.labelLine4.Location = new System.Drawing.Point(7, 10);
             this.labelLine4.Name = "labelLine4";
             this.labelLine4.Size = new System.Drawing.Size(16, 16);
             this.labelLine4.TabIndex = 28;
@@ -762,17 +888,18 @@
             // 
             this.panelLine5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panelLine5.Controls.Add(this.labelLine5);
-            this.panelLine5.Location = new System.Drawing.Point(15, 176);
+            this.panelLine5.Controls.Add(this.textBoxLine5);
+            this.panelLine5.Location = new System.Drawing.Point(15, 206);
             this.panelLine5.Margin = new System.Windows.Forms.Padding(0);
             this.panelLine5.Name = "panelLine5";
-            this.panelLine5.Size = new System.Drawing.Size(555, 36);
+            this.panelLine5.Size = new System.Drawing.Size(555, 41);
             this.panelLine5.TabIndex = 32;
             // 
             // labelLine5
             // 
             this.labelLine5.AutoSize = true;
             this.labelLine5.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLine5.Location = new System.Drawing.Point(7, 8);
+            this.labelLine5.Location = new System.Drawing.Point(7, 10);
             this.labelLine5.Name = "labelLine5";
             this.labelLine5.Size = new System.Drawing.Size(16, 16);
             this.labelLine5.TabIndex = 28;
@@ -782,17 +909,18 @@
             // 
             this.panelLine6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panelLine6.Controls.Add(this.labelLine6);
-            this.panelLine6.Location = new System.Drawing.Point(15, 209);
+            this.panelLine6.Controls.Add(this.textBoxLine6);
+            this.panelLine6.Location = new System.Drawing.Point(15, 244);
             this.panelLine6.Margin = new System.Windows.Forms.Padding(0);
             this.panelLine6.Name = "panelLine6";
-            this.panelLine6.Size = new System.Drawing.Size(555, 38);
+            this.panelLine6.Size = new System.Drawing.Size(555, 64);
             this.panelLine6.TabIndex = 33;
             // 
             // labelLine6
             // 
             this.labelLine6.AutoSize = true;
             this.labelLine6.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLine6.Location = new System.Drawing.Point(7, 7);
+            this.labelLine6.Location = new System.Drawing.Point(7, 10);
             this.labelLine6.Name = "labelLine6";
             this.labelLine6.Size = new System.Drawing.Size(16, 16);
             this.labelLine6.TabIndex = 28;
@@ -802,17 +930,18 @@
             // 
             this.panelLine7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panelLine7.Controls.Add(this.labelLine7);
-            this.panelLine7.Location = new System.Drawing.Point(15, 239);
+            this.panelLine7.Controls.Add(this.textBoxLine7);
+            this.panelLine7.Location = new System.Drawing.Point(15, 282);
             this.panelLine7.Margin = new System.Windows.Forms.Padding(0);
             this.panelLine7.Name = "panelLine7";
-            this.panelLine7.Size = new System.Drawing.Size(555, 36);
+            this.panelLine7.Size = new System.Drawing.Size(555, 55);
             this.panelLine7.TabIndex = 28;
             // 
             // labelLine7
             // 
             this.labelLine7.AutoSize = true;
             this.labelLine7.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLine7.Location = new System.Drawing.Point(7, 7);
+            this.labelLine7.Location = new System.Drawing.Point(7, 10);
             this.labelLine7.Name = "labelLine7";
             this.labelLine7.Size = new System.Drawing.Size(16, 16);
             this.labelLine7.TabIndex = 28;
@@ -822,17 +951,18 @@
             // 
             this.panelLine8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panelLine8.Controls.Add(this.labelLine8);
-            this.panelLine8.Location = new System.Drawing.Point(15, 270);
+            this.panelLine8.Controls.Add(this.textBoxLine8);
+            this.panelLine8.Location = new System.Drawing.Point(15, 320);
             this.panelLine8.Margin = new System.Windows.Forms.Padding(0);
             this.panelLine8.Name = "panelLine8";
-            this.panelLine8.Size = new System.Drawing.Size(555, 31);
+            this.panelLine8.Size = new System.Drawing.Size(555, 38);
             this.panelLine8.TabIndex = 27;
             // 
             // labelLine8
             // 
             this.labelLine8.AutoSize = true;
             this.labelLine8.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLine8.Location = new System.Drawing.Point(7, 7);
+            this.labelLine8.Location = new System.Drawing.Point(7, 10);
             this.labelLine8.Name = "labelLine8";
             this.labelLine8.Size = new System.Drawing.Size(16, 16);
             this.labelLine8.TabIndex = 28;
@@ -841,18 +971,12 @@
             // groupBoxPasswordCard
             // 
             this.groupBoxPasswordCard.BackColor = System.Drawing.Color.White;
+            this.groupBoxPasswordCard.Controls.Add(this.checkBoxIncludeSymbols);
+            this.groupBoxPasswordCard.Controls.Add(this.checkBoxDigitOnlyArea);
             this.groupBoxPasswordCard.Controls.Add(this.buttonGeneratePasswordCardFromSeed);
             this.groupBoxPasswordCard.Controls.Add(this.labelSeed);
             this.groupBoxPasswordCard.Controls.Add(this.textBoxSeed);
             this.groupBoxPasswordCard.Controls.Add(this.textBoxHeader);
-            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine1);
-            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine2);
-            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine3);
-            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine4);
-            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine5);
-            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine6);
-            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine7);
-            this.groupBoxPasswordCard.Controls.Add(this.textBoxLine8);
             this.groupBoxPasswordCard.Controls.Add(this.panelLine8);
             this.groupBoxPasswordCard.Controls.Add(this.panelLine7);
             this.groupBoxPasswordCard.Controls.Add(this.panelLine6);
@@ -861,16 +985,36 @@
             this.groupBoxPasswordCard.Controls.Add(this.panelLine3);
             this.groupBoxPasswordCard.Controls.Add(this.panelLine2);
             this.groupBoxPasswordCard.Controls.Add(this.panelLine1);
-            this.groupBoxPasswordCard.Location = new System.Drawing.Point(667, 12);
+            this.groupBoxPasswordCard.Location = new System.Drawing.Point(17, 12);
             this.groupBoxPasswordCard.Name = "groupBoxPasswordCard";
-            this.groupBoxPasswordCard.Size = new System.Drawing.Size(586, 360);
+            this.groupBoxPasswordCard.Size = new System.Drawing.Size(586, 440);
             this.groupBoxPasswordCard.TabIndex = 27;
             this.groupBoxPasswordCard.TabStop = false;
             this.groupBoxPasswordCard.Text = "Password Card";
             // 
+            // checkBoxIncludeSymbols
+            // 
+            this.checkBoxIncludeSymbols.AutoSize = true;
+            this.checkBoxIncludeSymbols.Location = new System.Drawing.Point(246, 402);
+            this.checkBoxIncludeSymbols.Name = "checkBoxIncludeSymbols";
+            this.checkBoxIncludeSymbols.Size = new System.Drawing.Size(132, 21);
+            this.checkBoxIncludeSymbols.TabIndex = 39;
+            this.checkBoxIncludeSymbols.Text = "Include Symbols";
+            this.checkBoxIncludeSymbols.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDigitOnlyArea
+            // 
+            this.checkBoxDigitOnlyArea.AutoSize = true;
+            this.checkBoxDigitOnlyArea.Location = new System.Drawing.Point(33, 402);
+            this.checkBoxDigitOnlyArea.Name = "checkBoxDigitOnlyArea";
+            this.checkBoxDigitOnlyArea.Size = new System.Drawing.Size(174, 21);
+            this.checkBoxDigitOnlyArea.TabIndex = 38;
+            this.checkBoxDigitOnlyArea.Text = "Include Digit Only Area";
+            this.checkBoxDigitOnlyArea.UseVisualStyleBackColor = true;
+            // 
             // buttonGeneratePasswordCardFromSeed
             // 
-            this.buttonGeneratePasswordCardFromSeed.Location = new System.Drawing.Point(416, 314);
+            this.buttonGeneratePasswordCardFromSeed.Location = new System.Drawing.Point(394, 366);
             this.buttonGeneratePasswordCardFromSeed.Name = "buttonGeneratePasswordCardFromSeed";
             this.buttonGeneratePasswordCardFromSeed.Size = new System.Drawing.Size(154, 30);
             this.buttonGeneratePasswordCardFromSeed.TabIndex = 37;
@@ -881,7 +1025,7 @@
             // labelSeed
             // 
             this.labelSeed.AutoSize = true;
-            this.labelSeed.Location = new System.Drawing.Point(52, 321);
+            this.labelSeed.Location = new System.Drawing.Point(30, 373);
             this.labelSeed.Name = "labelSeed";
             this.labelSeed.Size = new System.Drawing.Size(111, 17);
             this.labelSeed.TabIndex = 36;
@@ -891,19 +1035,104 @@
             // 
             this.textBoxSeed.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBoxSeed.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSeed.Location = new System.Drawing.Point(169, 314);
+            this.textBoxSeed.Location = new System.Drawing.Point(147, 366);
             this.textBoxSeed.MaxLength = 16;
             this.textBoxSeed.Name = "textBoxSeed";
             this.textBoxSeed.Size = new System.Drawing.Size(241, 30);
             this.textBoxSeed.TabIndex = 35;
-            this.textBoxSeed.Text = "1234567890123456";
+            // 
+            // checkBoxSpiralClockwiseLeft
+            // 
+            this.checkBoxSpiralClockwiseLeft.AutoSize = true;
+            this.checkBoxSpiralClockwiseLeft.Location = new System.Drawing.Point(7, 612);
+            this.checkBoxSpiralClockwiseLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxSpiralClockwiseLeft.Name = "checkBoxSpiralClockwiseLeft";
+            this.checkBoxSpiralClockwiseLeft.Size = new System.Drawing.Size(197, 21);
+            this.checkBoxSpiralClockwiseLeft.TabIndex = 37;
+            this.checkBoxSpiralClockwiseLeft.Text = "Spiral Clockwise, Start Left";
+            this.checkBoxSpiralClockwiseLeft.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSpiralClockwiseStartUp
+            // 
+            this.checkBoxSpiralClockwiseStartUp.AutoSize = true;
+            this.checkBoxSpiralClockwiseStartUp.Location = new System.Drawing.Point(7, 637);
+            this.checkBoxSpiralClockwiseStartUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxSpiralClockwiseStartUp.Name = "checkBoxSpiralClockwiseStartUp";
+            this.checkBoxSpiralClockwiseStartUp.Size = new System.Drawing.Size(191, 21);
+            this.checkBoxSpiralClockwiseStartUp.TabIndex = 38;
+            this.checkBoxSpiralClockwiseStartUp.Text = "Spiral Clockwise, Start Up";
+            this.checkBoxSpiralClockwiseStartUp.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSpiralClockwiseStartDown
+            // 
+            this.checkBoxSpiralClockwiseStartDown.AutoSize = true;
+            this.checkBoxSpiralClockwiseStartDown.Location = new System.Drawing.Point(7, 662);
+            this.checkBoxSpiralClockwiseStartDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxSpiralClockwiseStartDown.Name = "checkBoxSpiralClockwiseStartDown";
+            this.checkBoxSpiralClockwiseStartDown.Size = new System.Drawing.Size(208, 21);
+            this.checkBoxSpiralClockwiseStartDown.TabIndex = 39;
+            this.checkBoxSpiralClockwiseStartDown.Text = "Spiral Clockwise, Start Down";
+            this.checkBoxSpiralClockwiseStartDown.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSpiralCounterclockwiseStartDown
+            // 
+            this.checkBoxSpiralCounterclockwiseStartDown.AutoSize = true;
+            this.checkBoxSpiralCounterclockwiseStartDown.Location = new System.Drawing.Point(311, 662);
+            this.checkBoxSpiralCounterclockwiseStartDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxSpiralCounterclockwiseStartDown.Name = "checkBoxSpiralCounterclockwiseStartDown";
+            this.checkBoxSpiralCounterclockwiseStartDown.Size = new System.Drawing.Size(256, 21);
+            this.checkBoxSpiralCounterclockwiseStartDown.TabIndex = 43;
+            this.checkBoxSpiralCounterclockwiseStartDown.Text = "Spiral Counterclockwise, Start Down";
+            this.checkBoxSpiralCounterclockwiseStartDown.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSpiralCounterclockwiseStartUp
+            // 
+            this.checkBoxSpiralCounterclockwiseStartUp.AutoSize = true;
+            this.checkBoxSpiralCounterclockwiseStartUp.Location = new System.Drawing.Point(311, 637);
+            this.checkBoxSpiralCounterclockwiseStartUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxSpiralCounterclockwiseStartUp.Name = "checkBoxSpiralCounterclockwiseStartUp";
+            this.checkBoxSpiralCounterclockwiseStartUp.Size = new System.Drawing.Size(239, 21);
+            this.checkBoxSpiralCounterclockwiseStartUp.TabIndex = 42;
+            this.checkBoxSpiralCounterclockwiseStartUp.Text = "Spiral Counterclockwise, Start Up";
+            this.checkBoxSpiralCounterclockwiseStartUp.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSpiralCounterclockwiseStartLeft
+            // 
+            this.checkBoxSpiralCounterclockwiseStartLeft.AutoSize = true;
+            this.checkBoxSpiralCounterclockwiseStartLeft.Location = new System.Drawing.Point(311, 612);
+            this.checkBoxSpiralCounterclockwiseStartLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxSpiralCounterclockwiseStartLeft.Name = "checkBoxSpiralCounterclockwiseStartLeft";
+            this.checkBoxSpiralCounterclockwiseStartLeft.Size = new System.Drawing.Size(245, 21);
+            this.checkBoxSpiralCounterclockwiseStartLeft.TabIndex = 41;
+            this.checkBoxSpiralCounterclockwiseStartLeft.Text = "Spiral Counterclockwise, Start Left";
+            this.checkBoxSpiralCounterclockwiseStartLeft.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSpiralCounterclockwiseStartRight
+            // 
+            this.checkBoxSpiralCounterclockwiseStartRight.AutoSize = true;
+            this.checkBoxSpiralCounterclockwiseStartRight.Location = new System.Drawing.Point(311, 587);
+            this.checkBoxSpiralCounterclockwiseStartRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxSpiralCounterclockwiseStartRight.Name = "checkBoxSpiralCounterclockwiseStartRight";
+            this.checkBoxSpiralCounterclockwiseStartRight.Size = new System.Drawing.Size(254, 21);
+            this.checkBoxSpiralCounterclockwiseStartRight.TabIndex = 40;
+            this.checkBoxSpiralCounterclockwiseStartRight.Text = "Spiral Counterclockwise, Start Right";
+            this.checkBoxSpiralCounterclockwiseStartRight.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxSample
+            // 
+            this.pictureBoxSample.Image = global::PasswordCardWordListGenerator.Properties.Resources.sample;
+            this.pictureBoxSample.Location = new System.Drawing.Point(7, 22);
+            this.pictureBoxSample.Name = "pictureBoxSample";
+            this.pictureBoxSample.Size = new System.Drawing.Size(379, 231);
+            this.pictureBoxSample.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSample.TabIndex = 44;
+            this.pictureBoxSample.TabStop = false;
             // 
             // FormPasswordCardWordListGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1265, 727);
-            this.Controls.Add(this.pictureBoxSample);
+            this.ClientSize = new System.Drawing.Size(1221, 792);
             this.Controls.Add(this.groupBoxPasswordCard);
             this.Controls.Add(this.labelNumberOfPasswordsGenerated);
             this.Controls.Add(this.groupBoxSettings);
@@ -913,7 +1142,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormPasswordCardWordListGenerator";
             this.Text = "Password Card Wordlist Generator";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSample)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaximumPasswordLength)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinimumPasswordLength)).EndInit();
             this.groupBoxResources.ResumeLayout(false);
@@ -939,13 +1167,13 @@
             this.panelLine8.PerformLayout();
             this.groupBoxPasswordCard.ResumeLayout(false);
             this.groupBoxPasswordCard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSample)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBoxSample;
         private System.Windows.Forms.Button buttonGernerateWordList;
         private System.Windows.Forms.CheckBox checkBoxLeftToRight;
         private System.Windows.Forms.CheckBox checkBoxLeftToRightThenUpAtEdge;
@@ -1007,6 +1235,25 @@
         private System.Windows.Forms.Button buttonGeneratePasswordCardFromSeed;
         private System.Windows.Forms.Label labelSeed;
         private System.Windows.Forms.TextBox textBoxSeed;
+        private System.Windows.Forms.CheckBox checkBoxIncludeSymbols;
+        private System.Windows.Forms.CheckBox checkBoxDigitOnlyArea;
+        private System.Windows.Forms.CheckBox checkBoxZigZagRightToLeftThenDown;
+        private System.Windows.Forms.CheckBox checkBoxZigZagRightToLeftThenUp;
+        private System.Windows.Forms.CheckBox checkBoxZigZagLeftToRightThenUp;
+        private System.Windows.Forms.CheckBox checkBoxZigZagLeftToRightThenDown;
+        private System.Windows.Forms.CheckBox checkBoxDiagonalBottomUpToTheLeft;
+        private System.Windows.Forms.CheckBox checkBoxDiagonalBottomUpToTheRight;
+        private System.Windows.Forms.CheckBox checkBoxDiagonalTopDownToTheLeft;
+        private System.Windows.Forms.CheckBox checkBoxDiagonalTopDownToTheRight;
+        private System.Windows.Forms.CheckBox checkBoxSpiralClockwiseStartRight;
+        private System.Windows.Forms.CheckBox checkBoxSpiralClockwiseStartDown;
+        private System.Windows.Forms.CheckBox checkBoxSpiralClockwiseStartUp;
+        private System.Windows.Forms.CheckBox checkBoxSpiralClockwiseLeft;
+        private System.Windows.Forms.PictureBox pictureBoxSample;
+        private System.Windows.Forms.CheckBox checkBoxSpiralCounterclockwiseStartDown;
+        private System.Windows.Forms.CheckBox checkBoxSpiralCounterclockwiseStartUp;
+        private System.Windows.Forms.CheckBox checkBoxSpiralCounterclockwiseStartLeft;
+        private System.Windows.Forms.CheckBox checkBoxSpiralCounterclockwiseStartRight;
     }
 }
 

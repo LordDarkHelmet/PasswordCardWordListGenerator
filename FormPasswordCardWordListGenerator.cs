@@ -17,10 +17,14 @@ namespace PasswordCardWordListGenerator
 
         private const int NumOfRows_Horizontal = 8;
         private const int NumOfCols_Horizontal = 29;
+        private const int TotalNumberOfCharacters = NumOfRows_Horizontal * NumOfCols_Horizontal;
         private const int NumOfRows_Vertical = NumOfCols_Horizontal;
         private const int NumOfCols_Vertical = NumOfRows_Horizontal;
+        private const string FileExtension = ".txt";
         private int MinPasswordLength = 6;
         private int MaxPasswordLength = 12;
+
+        List<string> myResults;
 
 
         public FormPasswordCardWordListGenerator()
@@ -33,6 +37,9 @@ namespace PasswordCardWordListGenerator
                     mySelectedTextBox.MaxLength = NumOfCols_Horizontal;
                 }
             }
+
+            numericUpDownMaximumPasswordLength.Maximum = TotalNumberOfCharacters;
+            numericUpDownMinimumPasswordLength.Maximum = TotalNumberOfCharacters;
         }
 
         private void ButtonGernerateWordList_Click(object sender, EventArgs e)
@@ -41,9 +48,16 @@ namespace PasswordCardWordListGenerator
             MinPasswordLength = Convert.ToInt32(numericUpDownMinimumPasswordLength.Value);
             MaxPasswordLength = Convert.ToInt32(numericUpDownMaximumPasswordLength.Value);
 
-            if (MinPasswordLength>MaxPasswordLength)
+            if (MinPasswordLength > MaxPasswordLength)
             {
                 MessageBox.Show("Minimum password length must be less than or equal to maximum password length.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (MinPasswordLength < 1)
+            {
+                MessageBox.Show("Minimum password length must be at least 1.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
 
@@ -52,13 +66,13 @@ namespace PasswordCardWordListGenerator
             {
                 if (mySelectedTextBox.Text.Length != NumOfCols_Horizontal)
                 {
-                    MessageBox.Show("Error, text in each text box must be "+ NumOfCols_Horizontal + " characters", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error, text in each text box must be " + NumOfCols_Horizontal + " characters", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
             }
 
-            List<string> myResults = new List<string>(2000);
+            myResults = new List<string>(2000);
 
             // create array of arrays
             char[][] myJaggedArray = new char[NumOfRows_Horizontal][];
@@ -72,6 +86,50 @@ namespace PasswordCardWordListGenerator
             myJaggedArray[5] = textBoxLine6.Text.ToCharArray();
             myJaggedArray[6] = textBoxLine7.Text.ToCharArray();
             myJaggedArray[7] = textBoxLine8.Text.ToCharArray();
+
+            char[][] myOriginalJaggedArray = CopyArrayLinq(myJaggedArray);
+
+            if (checkBoxZigZagLeftToRightThenDown.Checked)
+            {
+                GenerateZigZagLeftToRightToDownToLeft(myOriginalJaggedArray);
+            }
+            if (checkBoxZigZagRightToLeftThenDown.Checked)
+            {
+                GenerateZigZagRightToLeftToDownToRight(myOriginalJaggedArray);
+            }
+            if (checkBoxZigZagLeftToRightThenUp.Checked)
+            {
+                GenerateZigZagLeftToRightToUpToLeft(myOriginalJaggedArray);
+            }
+            if (checkBoxZigZagRightToLeftThenUp.Checked)
+            {
+                GenerateZigZagRightToLeftToUpToRight(myOriginalJaggedArray);
+            }
+
+            //Diagonals
+            if (checkBoxDiagonalTopDownToTheRight.Checked)
+            {
+                GenerateDiagonalTopDownToTheRight(myOriginalJaggedArray);
+            }
+            if (checkBoxDiagonalTopDownToTheLeft.Checked)
+            {
+                GenerateDiagonalTopDownToTheLeft(myOriginalJaggedArray);
+            }
+            if (checkBoxDiagonalBottomUpToTheRight.Checked)
+            {
+                GenerateDiagonalBottomUpToTheRight(myOriginalJaggedArray);
+            }
+            if (checkBoxDiagonalBottomUpToTheLeft.Checked)
+            {
+                GenerateDiagonalBottomUpToTheLeft(myOriginalJaggedArray);
+            }
+
+            //Spirals
+            if (checkBoxSpiralClockwiseStartRight.Checked)
+            {
+                GenerateSpiralClockwise(myOriginalJaggedArray);
+            }
+
 
             string[] myHorizontalLeftToRightStringArray = new string[NumOfRows_Horizontal];
             for (int i = 0; i < myJaggedArray.Length; i++)
@@ -88,7 +146,7 @@ namespace PasswordCardWordListGenerator
                 {
                     tempArray[CurrentRow] = myJaggedArray[CurrentRow][CurrentCol];
                 }
-                myVerticleTopToBottomStringArray[CurrentCol] = new string(tempArray); 
+                myVerticleTopToBottomStringArray[CurrentCol] = new string(tempArray);
             }
 
 
@@ -122,7 +180,7 @@ namespace PasswordCardWordListGenerator
                             int maxRemainingSlots = MaxPasswordLength - startOfString.Length;
                             int minRemainingSlots = MinPasswordLength - startOfString.Length;
                             int remainingSlots = Math.Max(minRemainingSlots, 1);
-                            while( remainingSlots <= maxRemainingSlots )
+                            while (remainingSlots <= maxRemainingSlots)
                             {
 
                                 if (checkBoxLeftToRightThenDownAtEdge.Checked)
@@ -243,7 +301,7 @@ namespace PasswordCardWordListGenerator
                 char[] tempArray = new char[NumOfRows_Horizontal];
                 for (int CurrentRow = 0; CurrentRow < NumOfRows_Horizontal; CurrentRow++)
                 {
-                    tempArray[NumOfRows_Horizontal - CurrentRow -1] = myJaggedArray[CurrentRow][CurrentCol];
+                    tempArray[NumOfRows_Horizontal - CurrentRow - 1] = myJaggedArray[CurrentRow][CurrentCol];
                 }
 
                 Array.Reverse(tempArray);
@@ -331,7 +389,7 @@ namespace PasswordCardWordListGenerator
             for (int i = 0; i < myJaggedArray.Length; i++)
             {
                 //Array.Reverse(myJaggedArray[i]);
-                myHorizontalLeftToRightStringArray[myJaggedArray.Length - i -1] = new string(myJaggedArray[i]);
+                myHorizontalLeftToRightStringArray[myJaggedArray.Length - i - 1] = new string(myJaggedArray[i]);
             }
 
             ////////////////////////////
@@ -410,18 +468,20 @@ namespace PasswordCardWordListGenerator
             labelNumberOfPasswordsGenerated.Text = "Number of Passwords Generated: " + +myResults.Count;
 
 
-            string myFileName = "PasswordCard_WordList_" + myResults.Count + "_words_" + DateTime.Now.ToString("MMMM_dd_yyyy_hhmmss") + ".txt";
+            string myFileName = "PasswordCard_WordList_" + myResults.Count + "_words_" + DateTime.Now.ToString("MMMM_dd_yyyy_hhmmss") + FileExtension;
 
-            SaveFileDialog saveFileDialogWordFile = new SaveFileDialog();
-            saveFileDialogWordFile.DefaultExt = "txt";
-
-            saveFileDialogWordFile.FileName = myFileName;
-            if (saveFileDialogWordFile.ShowDialog() == DialogResult.OK)
+            using (SaveFileDialog saveFileDialogWordFile = new SaveFileDialog())
             {
-                if (saveFileDialogWordFile.FileName != "")
+                saveFileDialogWordFile.DefaultExt = "txt";
+
+                saveFileDialogWordFile.FileName = myFileName;
+                if (saveFileDialogWordFile.ShowDialog() == DialogResult.OK)
                 {
-                    Console.WriteLine("Filename = " + saveFileDialogWordFile.FileName);
-                    System.IO.File.WriteAllLines(saveFileDialogWordFile.FileName, myResults);
+                    if (saveFileDialogWordFile.FileName != "")
+                    {
+                        Console.WriteLine("Filename = " + saveFileDialogWordFile.FileName);
+                        System.IO.File.WriteAllLines(saveFileDialogWordFile.FileName, myResults);
+                    }
                 }
             }
 
@@ -503,6 +563,330 @@ namespace PasswordCardWordListGenerator
 
 
         }
+
+
+        private void AddPasswordsToWordListFrom1dArray(char[] my1dArray)
+        {
+            string myString = new string(my1dArray);
+
+            for (int StringStartLocation = 0; StringStartLocation < myString.Length; StringStartLocation++)
+            {
+                for (int passwordLength = MinPasswordLength; passwordLength <= MaxPasswordLength; passwordLength++)
+                {
+                    if (StringStartLocation + passwordLength <= myString.Length)
+                    {
+                        myResults.Add(myString.Substring(StringStartLocation, passwordLength));
+                        Console.WriteLine(myResults.Last());
+                    }
+                }
+            }
+            
+        }
+
+        /// <summary>
+        /// Copy a jaggad array
+        /// 
+        /// <see cref="https://stackoverflow.com/questions/4670720/extremely-fast-way-to-clone-the-values-of-a-jagged-array-into-a-second-array"/>
+        /// </summary>
+        /// <param name="source"> The array you want to copy</param>
+        /// <returns>A copy of that array</returns>
+        static char[][] CopyArrayLinq(char[][] source)
+        {
+            return source.Select(s => s.ToArray()).ToArray();
+        }
+
+        private  void GenerateZigZagLeftToRightToDownToLeft(char[][] myArray)
+        {
+            IEnumerable<char> myFlatArray;
+
+            //In this case we are going to reverse every other row. This fits when you start at an odd row, then go right, down, left, down, ... 
+            char[][] myZigZagEvenArray = CopyArrayLinq(myArray);
+            for (int row = 0; row < myZigZagEvenArray.Length; row++)
+            {
+                if (row %2 != 0)
+                {
+                    myZigZagEvenArray[row] = myZigZagEvenArray[row].Reverse().ToArray();
+                }
+            }
+
+            myFlatArray = myZigZagEvenArray.SelectMany(x => x);
+            AddPasswordsToWordListFrom1dArray(myFlatArray.ToArray());
+
+            //Now if you start with Row 2, the inverse above does not apply, you need to reverse the even rows.
+            char[][] myZigZagOddArray = CopyArrayLinq(myArray); ;
+            //eliminate the first row because it does not make sense in this action
+            myZigZagOddArray[0] = "".ToCharArray();
+            for (int row = 0; row < myZigZagOddArray.Length; row++)
+            {
+                if (row % 2 == 0)
+                {
+                    myZigZagOddArray[row] = myZigZagOddArray[row].Reverse().ToArray();
+                }
+            }
+
+            myFlatArray = myZigZagOddArray.SelectMany(x => x);
+            AddPasswordsToWordListFrom1dArray(myFlatArray.ToArray());
+
+            //Yes there will be lots of overlap with "right to left to down to right" but users may not see it that way when the select one and start on an odd line.
+            //Duplicates are cleaned up later. 
+        }
+
+        private void GenerateZigZagRightToLeftToDownToRight(char[][] myArray)
+        {
+            GenerateZigZagLeftToRightToDownToLeft(HorizontalArraySwap(myArray));
+        }
+
+        private void GenerateZigZagLeftToRightToUpToLeft(char[][] myArray)
+        {
+            GenerateZigZagLeftToRightToDownToLeft(VerticalArraySwap(myArray));
+        }
+
+        private void GenerateZigZagRightToLeftToUpToRight(char[][] myArray)
+        {
+            GenerateZigZagLeftToRightToDownToLeft(HorizontalArraySwap(VerticalArraySwap(myArray)));
+        }
+
+        private void GenerateDiagonalTopDownToTheRight(char[][] myArray)
+        {
+            char[][] myDiagonalArray = CopyArrayLinq(myArray);
+
+            for (int startingCol = 0; startingCol < myArray[0].Length; startingCol++)
+            {
+                for (int startingRow = 0; startingRow < myArray.Length; startingRow++)
+                {
+                    int currentRow = startingRow;
+                    string currentPassword = "";
+                    for (int currentCol = startingCol; (currentCol < myArray[0].Length) && (currentRow < myDiagonalArray.Length); currentCol++)
+                    {
+                        if (currentCol < myDiagonalArray[currentRow].Length)
+                        {
+                            currentPassword += myDiagonalArray[currentRow][currentCol];
+                            currentRow++;
+
+                            if ((currentPassword.Length <= MaxPasswordLength) && (currentPassword.Length >= MinPasswordLength))
+                            {
+                                myResults.Add(currentPassword);
+                                Console.WriteLine(myResults.Last());
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void GenerateDiagonalTopDownToTheLeft(char[][] myArray)
+        {
+            GenerateDiagonalTopDownToTheRight(HorizontalArraySwap(myArray)); 
+        }
+
+        private void GenerateDiagonalBottomUpToTheRight(char[][] myArray)
+        {
+            GenerateDiagonalTopDownToTheRight(VerticalArraySwap(myArray));
+        }
+
+        private void GenerateDiagonalBottomUpToTheLeft(char[][] myArray)
+        {
+            GenerateDiagonalTopDownToTheRight(VerticalArraySwap(HorizontalArraySwap(myArray)));
+        }
+
+        private char[][] HorizontalArraySwap(char[][] myArray)
+        {
+            char[][] mySwappedArray = CopyArrayLinq(myArray);
+            for (int row = 0; row < myArray.Length; row++)
+            {
+                mySwappedArray[row] = myArray[row].Reverse().ToArray();
+            }
+            return mySwappedArray;
+        }
+
+        private char[][] VerticalArraySwap(char[][] myArray)
+        {
+            char[][] mySwappedArray = CopyArrayLinq(myArray);
+            for (int row = 0; row < myArray.Length; row++)
+            {
+                myArray[row].CopyTo(mySwappedArray[myArray.Length - 1 - row], 0);
+            }
+            return mySwappedArray;
+        }
+
+        private void GenerateSpiralClockwise(char[][] myArray)
+        {
+            GenerateSpiral(myArray, SpiralDirection.Clockwise, SpiralStartDirection.Right);
+        }
+
+        enum SpiralStartDirection
+        {
+            Right,
+            Left,
+            Up,
+            Down
+        }
+
+        enum SpiralDirection
+        {
+            Clockwise,
+            Counterclockwise
+        }
+
+        private void GenerateSpiral(char[][] myArray, SpiralDirection myDirection = SpiralDirection.Clockwise, SpiralStartDirection myStartDirection = SpiralStartDirection.Right)
+        {
+            for (int rowStartPosition = 0; rowStartPosition < myArray.Length; rowStartPosition++)
+            {
+                for (int colStartPosition = 0; colStartPosition < myArray[0].Length; colStartPosition++)
+                {
+                    int nextRowMove;
+                    int nextColMove;
+                    bool startWithCol;
+
+                    if (myDirection == SpiralDirection.Clockwise)
+                    {
+                        switch (myStartDirection)
+                        {
+                            case SpiralStartDirection.Right:
+                                startWithCol = true;
+                                nextRowMove = 1;
+                                nextColMove = 1;
+                                break;
+                            case SpiralStartDirection.Left:
+                                startWithCol = true;
+                                nextRowMove = -1;
+                                nextColMove = -1;
+                                break;
+                            case SpiralStartDirection.Up:
+                                startWithCol = false;
+                                nextRowMove = 1;
+                                nextColMove = 1;
+                                break;
+                            case SpiralStartDirection.Down:
+                                startWithCol = false;
+                                nextRowMove = -1;
+                                nextColMove = -1;
+                                break;
+                            default:
+                                startWithCol = true;
+                                nextRowMove = 1;
+                                nextColMove = 1;
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+
+                        switch (myStartDirection)
+                        {
+                            case SpiralStartDirection.Right:
+                                startWithCol = true;
+                                nextRowMove = -1;
+                                nextColMove = 1;
+                                break;
+                            case SpiralStartDirection.Left:
+                                startWithCol = true;
+                                nextRowMove = 1;
+                                nextColMove = -1;
+                                break;
+                            case SpiralStartDirection.Up:
+                                startWithCol = false;
+                                nextRowMove = 1;
+                                nextColMove = -1;
+                                break;
+                            case SpiralStartDirection.Down:
+                                startWithCol = false;
+                                nextRowMove = -1;
+                                nextColMove = 1;
+                                break;
+                            default:
+                                startWithCol = true;
+                                nextRowMove = -1;
+                                nextColMove = 1;
+                                break;
+                        }
+                    }
+
+                    int currentRow = rowStartPosition;
+                    int currentCol = colStartPosition;
+
+                    int rowTarget = currentRow + nextRowMove;
+                    int colTarget = currentCol + nextColMove;
+
+                    bool timeToQuit = false; 
+
+                    string currentPassword = myArray[currentRow][currentCol].ToString();
+
+                    AddPotentialPassword(currentPassword);
+
+                    while (!timeToQuit)
+                    {
+                        
+
+                        //First move is to the right.
+                        if (startWithCol)
+                        {
+                            do
+                            {
+                                if (nextColMove > 0) { currentCol++; } else { currentCol--; }
+                                if ((currentCol < 0) || (currentCol >= myArray[0].Length)) { timeToQuit = true; break; }
+
+                                currentPassword += myArray[currentRow][currentCol].ToString();
+                                AddPotentialPassword(currentPassword);
+
+                            } while (currentCol != colTarget);
+
+                            if (timeToQuit)
+                            {
+                                break;
+                            }
+
+                            if (nextColMove > 0) { nextColMove = -1 * (nextColMove + 1); } else { nextColMove = -1 * (nextColMove - 1); }
+
+                            colTarget = colTarget + nextColMove;
+                        }
+                        startWithCol = true;
+
+                        if (timeToQuit)
+                        {
+                            break;
+                        }
+
+                        //First move is down.
+                        do
+                        {
+                            if (nextRowMove > 0) { currentRow++; } else { currentRow--; }
+                            if ((currentRow < 0) || (currentRow >= myArray.Length)) { timeToQuit = true; break; }
+
+                            currentPassword += myArray[currentRow][currentCol].ToString();
+                            AddPotentialPassword(currentPassword);
+
+                        } while (currentRow != rowTarget);
+
+                        if (timeToQuit)
+                        {
+                            break;
+                        }
+
+                        if (nextRowMove > 0) { nextRowMove = -1 * (nextRowMove + 1); } else { nextRowMove = -1 * (nextRowMove - 1); }
+
+                        rowTarget = rowTarget + nextRowMove;
+                    }
+
+                }
+            }
+        }
+
+        private void AddPotentialPassword(string potentialPassword)
+        {
+            if ((potentialPassword.Length <= MaxPasswordLength) && (potentialPassword.Length >= MinPasswordLength))
+            {
+                myResults.Add(potentialPassword);
+                Console.WriteLine(myResults.Last());
+            }
+        }
+
+        private void SpiralCounterClockwise(char[][] myArray)
+        {
+
+        }
+
     }
 
     /// <summary>
@@ -609,7 +993,7 @@ namespace PasswordCardWordListGenerator
             try
             {
 
-            shuffle(headerChars, random);
+            Shuffle(headerChars, random);
 
             if (headerChars.Length > width)
             {
@@ -671,14 +1055,14 @@ namespace PasswordCardWordListGenerator
             return true;
         }
 
-        private void shuffle(char[] list, Random rnd)
+        private void Shuffle(char[] list, Random rnd)
         {
             int size = list.Length;
             for (int i = size; i > 1; i--)
-                swap(list, i - 1, rnd.NextInt(i));
+                Swap(list, i - 1, rnd.NextInt(i));
         }
 
-        private void swap(char[] list, int i, int j)
+        private void Swap(char[] list, int i, int j)
         {
             char tmp = list[i];
             list[i] = list[j];
