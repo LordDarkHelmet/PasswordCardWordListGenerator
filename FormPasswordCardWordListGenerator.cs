@@ -839,7 +839,7 @@ namespace PasswordCardWordListGenerator
 
                             if (nextColMove > 0) { nextColMove = -1 * (nextColMove + 1); } else { nextColMove = -1 * (nextColMove - 1); }
 
-                            colTarget = colTarget + nextColMove;
+                            colTarget += nextColMove;
                         }
                         startWithCol = true;
 
@@ -866,7 +866,7 @@ namespace PasswordCardWordListGenerator
 
                         if (nextRowMove > 0) { nextRowMove = -1 * (nextRowMove + 1); } else { nextRowMove = -1 * (nextRowMove - 1); }
 
-                        rowTarget = rowTarget + nextRowMove;
+                        rowTarget += nextRowMove;
                     }
 
                 }
@@ -882,11 +882,286 @@ namespace PasswordCardWordListGenerator
             }
         }
 
-        private void SpiralCounterClockwise(char[][] myArray)
-        {
 
+        private void CheckBoxLeftToRight_MouseEnter(object sender, EventArgs e)
+        {
+            this.pictureBoxSample.Image = Properties.Resources.sampleLeftToRight;
         }
 
+        private void CheckBoxLeftToRight_MouseLeave(object sender, EventArgs e)
+        {
+            this.pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxRightToLeft_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleRightToLeft;
+        }
+
+        private void CheckBoxRightToLeft_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxTopToBottom_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleTopToBottom;
+        }
+
+        private void CheckBoxTopToBottom_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxBottomToTop_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleBottomToTop;
+        }
+
+        private void CheckBoxBottomToTop_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxLeftToRightThenUpAtEdge_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleLeftToRightThenUpOnEdge;
+        }
+
+        private void CheckBoxLeftToRightThenUpAtEdge_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxRightToLeftThenUpAtEdge_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleRightToLeftThenUpOnEdge;
+        }
+
+        private void CheckBoxRightToLeftThenUpAtEdge_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxLeftToRightThenDownAtEdge_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleLeftToRightThenDownOnEdge;
+        }
+
+        private void CheckBoxLeftToRightThenDownAtEdge_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxRightToLeftThenDownAtEdge_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleRightToLeftThenDownOnEdge;
+        }
+
+        private void CheckBoxRightToLeftThenDownAtEdge_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxTopToBottomThenRightAtEdge_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleTopToBottomThenRightOnEdge;
+        }
+
+        private void CheckBoxTopToBottomThenRightAtEdge_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxBottomToTopThenRightAtEdge_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleBottomToTopThenRightOnEdge;
+        }
+
+        private void CheckBoxBottomToTopThenRightAtEdge_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxTopToBottomThenLeftAtEdge_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleTopToBottomThenLeftOnEdge;
+        }
+
+        private void CheckBoxTopToBottomThenLeftAtEdge_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxBottomToTopThenLeftAtEdge_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleBottomToTopThenLeftOnEdge;
+        }
+
+        private void CheckBoxBottomToTopThenLeftAtEdge_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxZigZagLeftToRightThenDown_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleZigZagLeftToRightDown;
+        }
+
+        private void CheckBoxZigZagLeftToRightThenDown_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxZigZagRightToLeftThenDown_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleZigZagRightToLeftDown;
+        }
+
+        private void CheckBoxZigZagRightToLeftThenDown_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxZigZagLeftToRightThenUp_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleZigZagLeftToRightUp;
+        }
+
+        private void CheckBoxZigZagLeftToRightThenUp_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxZigZagRightToLeftThenUp_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleZigZagRightToLeftUp;
+        }
+
+        private void CheckBoxZigZagRightToLeftThenUp_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxDiagonalTopDownToTheRight_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleDiagonalTopDownToRight;
+        }
+
+        private void CheckBoxDiagonalTopDownToTheRight_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxDiagonalBottomUpToTheRight_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleDiagonalBottomUpToRight;
+        }
+
+        private void CheckBoxDiagonalBottomUpToTheRight_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxDiagonalTopDownToTheLeft_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleDiagonalTopDownToLeft;
+        }
+
+        private void CheckBoxDiagonalTopDownToTheLeft_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxDiagonalBottomUpToTheLeft_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleDiagonalBottomUpToLeft;
+        }
+
+        private void CheckBoxDiagonalBottomUpToTheLeft_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxSpiralClockwiseStartRight_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleSpiralClockwiseStartRight;
+        }
+
+        private void CheckBoxSpiralClockwiseStartRight_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxSpiralCounterclockwiseStartRight_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleSpiralCounterclockwiseStartRight;
+        }
+
+        private void CheckBoxSpiralCounterclockwiseStartRight_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxSpiralClockwiseLeft_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleSpiralClockwiseStartLeft;
+        }
+
+        private void CheckBoxSpiralClockwiseLeft_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxSpiralCounterclockwiseStartLeft_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleSpiralCounterclockwiseStartLeft;
+        }
+
+        private void CheckBoxSpiralCounterclockwiseStartLeft_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxSpiralClockwiseStartUp_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleSpiralClockwiseStartUp;
+        }
+
+        private void CheckBoxSpiralClockwiseStartUp_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxSpiralCounterclockwiseStartUp_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleSpiralCounterclockwiseStartUp;
+        }
+
+        private void CheckBoxSpiralCounterclockwiseStartUp_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxSpiralClockwiseStartDown_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleSpiralClockwiseStartDown;
+        }
+
+        private void CheckBoxSpiralClockwiseStartDown_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
+
+        private void CheckBoxSpiralCounterclockwiseStartDown_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sampleSpiralCounterclockwiseStartDown;
+        }
+
+        private void CheckBoxSpiralCounterclockwiseStartDown_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSample.Image = Properties.Resources.sample;
+        }
     }
 
     /// <summary>

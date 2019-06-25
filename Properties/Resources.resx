@@ -118,13 +118,97 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tezosxtzrecovery_SFO_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\tezosxtzrecovery_SFO_icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sample" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sample.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sampleBottomToTop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleBottomToTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleBottomToTopThenLeftOnEdge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleBottomToTopThenLeftOnEdge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleBottomToTopThenRightOnEdge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleBottomToTopThenRightOnEdge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleDiagonalBottomUpToLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleDiagonalBottomUpToLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleDiagonalBottomUpToRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleDiagonalBottomUpToRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleDiagonalTopDownToLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleDiagonalTopDownToLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleDiagonalTopDownToRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleDiagonalTopDownToRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleLeftToRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleLeftToRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleLeftToRightThenDownOnEdge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleLeftToRightThenDownOnEdge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleLeftToRightThenUpOnEdge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleLeftToRightThenUpOnEdge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleRightToLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleRightToLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleRightToLeftThenDownOnEdge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleRightToLeftThenDownOnEdge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleRightToLeftThenUpOnEdge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleRightToLeftThenUpOnEdge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleSpiralClockwiseStartDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleSpiralClockwiseStartDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleSpiralClockwiseStartLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleSpiralClockwiseStartLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleSpiralClockwiseStartRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleSpiralClockwiseStartRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleSpiralClockwiseStartUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleSpiralClockwiseStartUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleSpiralCounterclockwiseStartDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleSpiralCounterclockwiseStartDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleSpiralCounterclockwiseStartLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleSpiralCounterclockwiseStartLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleSpiralCounterclockwiseStartRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleSpiralCounterclockwiseStartRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleSpiralCounterclockwiseStartUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleSpiralCounterclockwiseStartUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleTopToBottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleTopToBottom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleTopToBottomThenLeftOnEdge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleTopToBottomThenLeftOnEdge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleTopToBottomThenRightOnEdge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleTopToBottomThenRightOnEdge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleZigZagLeftToRightDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleZigZagLeftToRightDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleZigZagLeftToRightUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleZigZagLeftToRightUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleZigZagRightToLeftDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleZigZagRightToLeftDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sampleZigZagRightToLeftUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sampleZigZagRightToLeftUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TezosRecoveryPicture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TezosRecoveryPicture.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tezosxtzrecovery_SFO_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tezosxtzrecovery_SFO_icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

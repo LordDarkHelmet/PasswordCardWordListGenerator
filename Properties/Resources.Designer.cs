@@ -73,6 +73,286 @@ namespace PasswordCardWordListGenerator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sampleBottomToTop {
+            get {
+                object obj = ResourceManager.GetObject("sampleBottomToTop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleBottomToTopThenLeftOnEdge {
+            get {
+                object obj = ResourceManager.GetObject("sampleBottomToTopThenLeftOnEdge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleBottomToTopThenRightOnEdge {
+            get {
+                object obj = ResourceManager.GetObject("sampleBottomToTopThenRightOnEdge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleDiagonalBottomUpToLeft {
+            get {
+                object obj = ResourceManager.GetObject("sampleDiagonalBottomUpToLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleDiagonalBottomUpToRight {
+            get {
+                object obj = ResourceManager.GetObject("sampleDiagonalBottomUpToRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleDiagonalTopDownToLeft {
+            get {
+                object obj = ResourceManager.GetObject("sampleDiagonalTopDownToLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleDiagonalTopDownToRight {
+            get {
+                object obj = ResourceManager.GetObject("sampleDiagonalTopDownToRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleLeftToRight {
+            get {
+                object obj = ResourceManager.GetObject("sampleLeftToRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleLeftToRightThenDownOnEdge {
+            get {
+                object obj = ResourceManager.GetObject("sampleLeftToRightThenDownOnEdge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleLeftToRightThenUpOnEdge {
+            get {
+                object obj = ResourceManager.GetObject("sampleLeftToRightThenUpOnEdge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleRightToLeft {
+            get {
+                object obj = ResourceManager.GetObject("sampleRightToLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleRightToLeftThenDownOnEdge {
+            get {
+                object obj = ResourceManager.GetObject("sampleRightToLeftThenDownOnEdge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleRightToLeftThenUpOnEdge {
+            get {
+                object obj = ResourceManager.GetObject("sampleRightToLeftThenUpOnEdge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleSpiralClockwiseStartDown {
+            get {
+                object obj = ResourceManager.GetObject("sampleSpiralClockwiseStartDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleSpiralClockwiseStartLeft {
+            get {
+                object obj = ResourceManager.GetObject("sampleSpiralClockwiseStartLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleSpiralClockwiseStartRight {
+            get {
+                object obj = ResourceManager.GetObject("sampleSpiralClockwiseStartRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleSpiralClockwiseStartUp {
+            get {
+                object obj = ResourceManager.GetObject("sampleSpiralClockwiseStartUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleSpiralCounterclockwiseStartDown {
+            get {
+                object obj = ResourceManager.GetObject("sampleSpiralCounterclockwiseStartDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleSpiralCounterclockwiseStartLeft {
+            get {
+                object obj = ResourceManager.GetObject("sampleSpiralCounterclockwiseStartLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleSpiralCounterclockwiseStartRight {
+            get {
+                object obj = ResourceManager.GetObject("sampleSpiralCounterclockwiseStartRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleSpiralCounterclockwiseStartUp {
+            get {
+                object obj = ResourceManager.GetObject("sampleSpiralCounterclockwiseStartUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleTopToBottom {
+            get {
+                object obj = ResourceManager.GetObject("sampleTopToBottom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleTopToBottomThenLeftOnEdge {
+            get {
+                object obj = ResourceManager.GetObject("sampleTopToBottomThenLeftOnEdge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleTopToBottomThenRightOnEdge {
+            get {
+                object obj = ResourceManager.GetObject("sampleTopToBottomThenRightOnEdge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleZigZagLeftToRightDown {
+            get {
+                object obj = ResourceManager.GetObject("sampleZigZagLeftToRightDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleZigZagLeftToRightUp {
+            get {
+                object obj = ResourceManager.GetObject("sampleZigZagLeftToRightUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleZigZagRightToLeftDown {
+            get {
+                object obj = ResourceManager.GetObject("sampleZigZagRightToLeftDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampleZigZagRightToLeftUp {
+            get {
+                object obj = ResourceManager.GetObject("sampleZigZagRightToLeftUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TezosRecoveryPicture {
             get {
                 object obj = ResourceManager.GetObject("TezosRecoveryPicture", resourceCulture);
