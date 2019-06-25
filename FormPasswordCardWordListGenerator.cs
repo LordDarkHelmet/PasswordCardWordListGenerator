@@ -20,9 +20,11 @@ namespace PasswordCardWordListGenerator
         private const int TotalNumberOfCharacters = NumOfRows_Horizontal * NumOfCols_Horizontal;
         private const int NumOfRows_Vertical = NumOfCols_Horizontal;
         private const int NumOfCols_Vertical = NumOfRows_Horizontal;
-        private const string FileExtension = ".txt";
+        private const string FileExtensionWithoutDot = "txt";
+        private const string FileExtension = "." + FileExtensionWithoutDot;
         private int MinPasswordLength = 6;
         private int MaxPasswordLength = 12;
+        
 
         List<string> myResults;
 
@@ -43,6 +45,15 @@ namespace PasswordCardWordListGenerator
         }
 
         private void ButtonGernerateWordList_Click(object sender, EventArgs e)
+        {
+            GernerateWordList(true);
+        }
+
+        /// <summary>
+        /// Generates a word list based on the GUI
+        /// </summary>
+        /// <param name="includeFileSave">If true, we will ask the user if they want to save a file.</param>
+        private void GernerateWordList(bool includeFileSave = false)
         {
 
             MinPasswordLength = Convert.ToInt32(numericUpDownMinimumPasswordLength.Value);
@@ -86,6 +97,15 @@ namespace PasswordCardWordListGenerator
             myJaggedArray[5] = textBoxLine6.Text.ToCharArray();
             myJaggedArray[6] = textBoxLine7.Text.ToCharArray();
             myJaggedArray[7] = textBoxLine8.Text.ToCharArray();
+
+            foreach (char[] myCharArray in myJaggedArray)
+            {
+                if (myCharArray.Length != NumOfCols_Horizontal)
+                {
+                    MessageBox.Show("Each row in the Password Card Must have exactly " + NumOfCols_Horizontal + " characters", "Password Card Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
 
             char[][] myOriginalJaggedArray = CopyArrayLinq(myJaggedArray);
 
@@ -168,7 +188,7 @@ namespace PasswordCardWordListGenerator
                             if (checkBoxLeftToRight.Checked)
                             {
                                 myResults.Add(myHorizontalLeftToRightStringArray[CurrentRow].Substring(CurrentCol, numberOfChars));
-                                Console.WriteLine(myResults.Last());
+                                //Console.WriteLine(myResults.Last());
                             }
                         }
                         else
@@ -191,7 +211,7 @@ namespace PasswordCardWordListGenerator
                                         char[] myCharArray = myVerticleTopToBottomStringArray[CurrentCol + remainingCharsOnTheArray].ToCharArray(CurrentRow + 1, remainingSlots);
                                         string endOfString = new string(myCharArray);
                                         myResults.Add(startOfString + endOfString);
-                                        Console.WriteLine(myResults.Last());
+                                        //Console.WriteLine(myResults.Last());
                                     }
                                 }
 
@@ -204,7 +224,7 @@ namespace PasswordCardWordListGenerator
                                         Array.Reverse(myCharArray);
                                         string endOfString = new string(myCharArray);
                                         myResults.Add(startOfString + endOfString);
-                                        Console.WriteLine(myResults.Last());
+                                        //Console.WriteLine(myResults.Last());
                                     }
                                 }
 
@@ -234,7 +254,7 @@ namespace PasswordCardWordListGenerator
                             if (checkBoxTopToBottom.Checked)
                             {
                                 myResults.Add(myVerticleTopToBottomStringArray[CurrentRow].Substring(CurrentCol, numberOfChars));
-                                Console.WriteLine(myResults.Last());
+                                //Console.WriteLine(myResults.Last());
                             }
                         }
                         else
@@ -258,7 +278,7 @@ namespace PasswordCardWordListGenerator
                                         char[] myCharArray = myHorizontalLeftToRightStringArray[CurrentCol + remainingCharsOnTheArray].ToCharArray(CurrentRow + 1, remainingSlots);
                                         string endOfString = new string(myCharArray);
                                         myResults.Add(startOfString + endOfString);
-                                        Console.WriteLine(myResults.Last());
+                                        //Console.WriteLine(myResults.Last());
                                     }
                                 }
 
@@ -271,7 +291,7 @@ namespace PasswordCardWordListGenerator
                                         Array.Reverse(myCharArray);
                                         string endOfString = new string(myCharArray);
                                         myResults.Add(startOfString + endOfString);
-                                        Console.WriteLine(myResults.Last());
+                                        //Console.WriteLine(myResults.Last());
                                     }
                                 }
 
@@ -323,7 +343,7 @@ namespace PasswordCardWordListGenerator
                             if (checkBoxRightToLeft.Checked)
                             {
                                 myResults.Add(myHorizontalLeftToRightStringArray[CurrentRow].Substring(CurrentCol, numberOfChars));
-                                Console.WriteLine(myResults.Last());
+                                //Console.WriteLine(myResults.Last());
                             }
                         }
                         else
@@ -346,7 +366,7 @@ namespace PasswordCardWordListGenerator
                                         char[] myCharArray = myVerticleTopToBottomStringArray[CurrentCol + remainingCharsOnTheArray].ToCharArray(CurrentRow + 1, remainingSlots);
                                         string endOfString = new string(myCharArray);
                                         myResults.Add(startOfString + endOfString);
-                                        Console.WriteLine(myResults.Last());
+                                        //Console.WriteLine(myResults.Last());
                                     }
                                 }
 
@@ -359,7 +379,7 @@ namespace PasswordCardWordListGenerator
                                         Array.Reverse(myCharArray);
                                         string endOfString = new string(myCharArray);
                                         myResults.Add(startOfString + endOfString);
-                                        Console.WriteLine(myResults.Last());
+                                        //Console.WriteLine(myResults.Last());
                                     }
                                 }
 
@@ -407,7 +427,7 @@ namespace PasswordCardWordListGenerator
                             if (checkBoxBottomToTop.Checked)
                             {
                                 myResults.Add(myVerticleTopToBottomStringArray[CurrentRow].Substring(CurrentCol, numberOfChars));
-                                Console.WriteLine(myResults.Last());
+                                //Console.WriteLine(myResults.Last());
                             }
                         }
                         else
@@ -431,7 +451,7 @@ namespace PasswordCardWordListGenerator
                                         char[] myCharArray = myHorizontalLeftToRightStringArray[CurrentCol + remainingCharsOnTheArray].ToCharArray(CurrentRow + 1, remainingSlots);
                                         string endOfString = new string(myCharArray);
                                         myResults.Add(startOfString + endOfString);
-                                        Console.WriteLine(myResults.Last());
+                                        //Console.WriteLine(myResults.Last());
 
                                     }
                                 }
@@ -445,7 +465,7 @@ namespace PasswordCardWordListGenerator
                                         Array.Reverse(myCharArray);
                                         string endOfString = new string(myCharArray);
                                         myResults.Add(startOfString + endOfString);
-                                        Console.WriteLine(myResults.Last());
+                                        //Console.WriteLine(myResults.Last());
                                     }
                                 }
 
@@ -468,23 +488,32 @@ namespace PasswordCardWordListGenerator
             labelNumberOfPasswordsGenerated.Text = "Number of Passwords Generated: " + +myResults.Count;
 
 
-            string myFileName = "PasswordCard_WordList_" + myResults.Count + "_words_" + DateTime.Now.ToString("MMMM_dd_yyyy_hhmmss") + FileExtension;
-
-            using (SaveFileDialog saveFileDialogWordFile = new SaveFileDialog())
+            if (includeFileSave)
             {
-                saveFileDialogWordFile.DefaultExt = "txt";
-
-                saveFileDialogWordFile.FileName = myFileName;
-                if (saveFileDialogWordFile.ShowDialog() == DialogResult.OK)
+                if (myResults.Count <= 0)
                 {
-                    if (saveFileDialogWordFile.FileName != "")
+                    MessageBox.Show("No passwords generated. Please select options.", "No Passords Generated", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string myFileName = "PasswordCard_WordList_" + myResults.Count + "_words_" + DateTime.Now.ToString("MMMM_dd_yyyy_hhmmss") + FileExtension;
+
+                using (SaveFileDialog saveFileDialogWordFile = new SaveFileDialog())
+                {
+                    saveFileDialogWordFile.DefaultExt = FileExtensionWithoutDot;
+
+                    saveFileDialogWordFile.FileName = myFileName;
+                    if (saveFileDialogWordFile.ShowDialog() == DialogResult.OK)
                     {
-                        Console.WriteLine("Filename = " + saveFileDialogWordFile.FileName);
-                        System.IO.File.WriteAllLines(saveFileDialogWordFile.FileName, myResults);
+                        if (saveFileDialogWordFile.FileName != "")
+                        {
+                            Console.WriteLine("Filename = " + saveFileDialogWordFile.FileName);
+                            System.IO.File.WriteAllLines(saveFileDialogWordFile.FileName, myResults);
+                        }
                     }
                 }
-            }
 
+            }
         }
 
 
@@ -545,7 +574,7 @@ namespace PasswordCardWordListGenerator
         {
             try
             {
-                PasswordCard pc = new PasswordCard(textBoxSeed.Text);
+                PasswordCard pc = new PasswordCard(textBoxSeed.Text, checkBoxDigitOnlyArea.Checked, checkBoxIncludeSymbols.Checked);
                 textBoxHeader.Text = pc.MyHeader;
                 textBoxLine1.Text = new string(pc.myPasswordCardGrid[1]);
                 textBoxLine2.Text = new string(pc.myPasswordCardGrid[2]);
@@ -561,7 +590,7 @@ namespace PasswordCardWordListGenerator
                 MessageBox.Show("Error Generating Password Card:\n\n" + ex.Message, "Error Generating Password Card", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
+            GernerateWordList(false);
         }
 
 
@@ -576,7 +605,7 @@ namespace PasswordCardWordListGenerator
                     if (StringStartLocation + passwordLength <= myString.Length)
                     {
                         myResults.Add(myString.Substring(StringStartLocation, passwordLength));
-                        Console.WriteLine(myResults.Last());
+                        //Console.WriteLine(myResults.Last());
                     }
                 }
             }
@@ -666,7 +695,7 @@ namespace PasswordCardWordListGenerator
                             if ((currentPassword.Length <= MaxPasswordLength) && (currentPassword.Length >= MinPasswordLength))
                             {
                                 myResults.Add(currentPassword);
-                                Console.WriteLine(myResults.Last());
+                                //Console.WriteLine(myResults.Last());
                             }
                         }
                     }
@@ -878,7 +907,7 @@ namespace PasswordCardWordListGenerator
             if ((potentialPassword.Length <= MaxPasswordLength) && (potentialPassword.Length >= MinPasswordLength))
             {
                 myResults.Add(potentialPassword);
-                Console.WriteLine(myResults.Last());
+                //Console.WriteLine(myResults.Last());
             }
         }
 
@@ -1162,6 +1191,79 @@ namespace PasswordCardWordListGenerator
         {
             pictureBoxSample.Image = Properties.Resources.sample;
         }
+
+        private void CheckBoxDigitOnlyArea_CheckedChanged(object sender, EventArgs e)
+        {
+            if (textBoxSeed.Text != String.Empty) GeneratePasswordCardFromSeed();
+        }
+
+        private void CheckBoxIncludeSymbols_CheckedChanged(object sender, EventArgs e)
+        {
+            if (textBoxSeed.Text != String.Empty) GeneratePasswordCardFromSeed();
+        }
+
+        private void CheckBoxGeneric_CheckedChanged(object sender, EventArgs e)
+        {
+            GernerateWordList(false);
+        }
+
+
+        private void TextBoxSeed_TextChanged(object sender, EventArgs e)
+        {
+            string item = textBoxSeed.Text;
+            int n = 0;
+            string temp = "";
+            int mySelectionStart = textBoxSeed.SelectionStart;
+
+            if (!int.TryParse(item, System.Globalization.NumberStyles.HexNumber, System.Globalization.NumberFormatInfo.CurrentInfo, out n) &&
+              item != String.Empty)
+            {
+                foreach (char myChar in textBoxSeed.Text)
+                {
+                    if (System.Uri.IsHexDigit(myChar))
+                    {
+                        temp += myChar;
+                    }
+                }
+            }
+            else
+            {
+                temp = textBoxSeed.Text;
+            }
+
+            if (temp.Length > PasswordCard.MAX_SEED_LENGTH)
+            {
+                temp = temp.Substring(0, PasswordCard.MAX_SEED_LENGTH);
+            }
+
+            textBoxSeed.Text = temp;
+            textBoxSeed.SelectionStart = mySelectionStart;
+
+            if (textBoxSeed.Text != String.Empty) GeneratePasswordCardFromSeed();
+        }
+
+        private void NumericUpDownMinimumPasswordLength_ValueChanged(object sender, EventArgs e)
+        {
+            if (numericUpDownMinimumPasswordLength.Value > numericUpDownMaximumPasswordLength.Value)
+            {
+                numericUpDownMaximumPasswordLength.Value = numericUpDownMinimumPasswordLength.Value;
+            }
+            GernerateWordList(false);
+        }
+
+        private void NumericUpDownMaximumPasswordLength_ValueChanged(object sender, EventArgs e)
+        {
+            if (numericUpDownMinimumPasswordLength.Value > numericUpDownMaximumPasswordLength.Value)
+            {
+                numericUpDownMinimumPasswordLength.Value = numericUpDownMaximumPasswordLength.Value;
+            }
+            GernerateWordList(false);
+        }
+
+        private void FormPasswordCardWordListGenerator_Load(object sender, EventArgs e)
+        {
+            GernerateWordList(false);
+        }
     }
 
     /// <summary>
@@ -1207,6 +1309,7 @@ namespace PasswordCardWordListGenerator
         public const string DIGITS = "0123456789";
         public const string DIGITS_AND_LETTERS = "23456789abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ";
         public const string DIGITS_LETTERS_AND_SYMBOLS = "23456789abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ@#$%&*<>?€+{}[]()/\\";
+        public const int MAX_SEED_LENGTH = 16;
 
 
         public char[][] myPasswordCardGrid;
@@ -1224,10 +1327,10 @@ namespace PasswordCardWordListGenerator
             if (seed == null) { throw new ArgumentException("The string cannot be null", "seed"); }
             seed = seed.Trim();
             if (seed == "") { throw new ArgumentException("The string cannot be empty", "seed"); }
-            if (seed.Length > 16) { throw new ArgumentException("The string length must be no more than 16 characters", "seed"); }
+            if (seed.Length > MAX_SEED_LENGTH) { throw new ArgumentException("The string length must be no more than " + MAX_SEED_LENGTH + " characters", "seed"); }
 
             string precursor = "";
-            for (int i = seed.Length; i < 16; i++)
+            for (int i = seed.Length; i < MAX_SEED_LENGTH; i++)
             {
                 precursor += '0';
             }
